@@ -1,6 +1,1 @@
-export default function handler(req, res) {
-  res.setHeader('Set-Cookie', 'vvp_guest=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0');
-  res.statusCode = 303;
-  res.setHeader('Location', '/');
-  return res.end();
-}
+module.exports=function(req,res){const area=req.query.area==='management'?'management':'site';const cookies=[];if(area==='management')cookies.push('vvp_management=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0');else{cookies.push('vvp_site=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0');cookies.push('vvp_management=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0');}res.setHeader('Set-Cookie',cookies);res.statusCode=302;res.setHeader('Location',area==='management'?'/management':'/login');res.end();}
