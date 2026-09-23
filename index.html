@@ -120,21 +120,13 @@
 
       <fieldset class="pet-fields" id="pet-fields" hidden>
         <legend>Pet approval details</legend>
-        <p class="pet-note">One pet may be approved. Approved pet stays require the Pet Addendum, $250 non-refundable pet fee and $1,000 refundable pet deposit.</p>
         <div class="field-row">
-          <label>Type of pet<input name="petType" data-pet-required></label>
           <label>Breed<input name="petBreed" data-pet-required></label>
+          <label>Weight<input name="petWeight" placeholder="e.g. 28 lbs" data-pet-required></label>
         </div>
-        <div class="field-row">
-          <label>Pet name<input name="petName" data-pet-required></label>
-          <label>Age<input name="petAge" data-pet-required></label>
-        </div>
-        <label>Weight<input name="petWeight" placeholder="e.g. 28 lbs" data-pet-required></label>
-        <label>If left alone, how will your pet be secured?<textarea name="petSupervision" rows="3" placeholder="Crated, otherwise secured, or never left unattended" data-pet-required></textarea></label>
-        <label>Behavior notes<textarea name="petBehavior" rows="3" placeholder="Anything helpful for approval" data-pet-required></textarea></label>
       </fieldset>
 
-      <label>Notes<textarea name="visitReason" rows="4" placeholder="Anything else we should know about your stay"></textarea></label>
+      
       <button type="submit">Request dates</button>
       <p id="request-status" class="form-status" aria-live="polite"></p>
     </form>
