@@ -1,40 +1,21 @@
-# Vineyard Vista Properties — Master Website
+# Vineyard Vista Properties — Private Demo Website
 
-This is the master GitHub/Vercel version of the Vineyard Vista Properties password-protected guest guide.
+## Access
+- Entire demo site: `MVY2027`
+- Management area: `ABCgang`
 
-## File structure
+## Management structure
+1. `/management` — Governance
+2. `/management/rentals` — Rentals & Agreements
+3. `/management/house-standards` — House Standards
+4. `/management/property` — Property Management
 
-- `guide.json` — **primary content file**. Update this for recommendations, addresses, phone numbers, links, house notes, family/pet language, transportation, beaches, dining, etc.
-- `guide.html` — guest-guide page structure. Usually leave this alone for content-only changes.
-- `styles.css` — visual design, spacing, typography, responsive behavior.
-- `script.js` — reads `guide.json` and renders the guide.
-- `index.html` — password landing page.
-- `login.css` — password landing page styling.
-- `vvp-logo.jpeg` — current logo asset.
+The Management pages all use the separate Management authentication session. The main site remains password protected as a private working demo.
 
-## Authentication / infrastructure — do not change for normal site edits
+## Vercel environment variables
+- `SITE_PASSWORD=MVY2027`
+- `MANAGEMENT_PASSWORD=ABCgang`
+- `AUTH_SECRET=<long random secret>`
 
-- `middleware.js`
-- `vercel.json`
-- `package.json`
-- `robots.txt`
-- `api/login.js`
-- `api/logout.js`
-
-Vercel environment variables remain:
-
-- `SITE_PASSWORD` = `MVY2027`
-- `AUTH_SECRET` = your existing long secret value
-
-## Normal update workflow
-
-1. Edit `guide.json` for ordinary content changes.
-2. Replace `guide.json` in the GitHub repository and commit.
-3. Vercel automatically deploys the new version.
-4. Password protection and domain settings remain unchanged.
-
-For design changes, update `guide.html`, `styles.css`, and/or `script.js` as needed.
-
-## Important
-
-Keep the `api` folder intact. Vercel uses `/api/login.js` and `/api/logout.js` as server-side functions.
+## Notes
+The legal agreement templates are working drafts and contain placeholders that should be finalized for the acquired property and reviewed by counsel before live rental use.
