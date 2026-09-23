@@ -1,12 +1,8 @@
 function readCookie(request, name) {
-  const cookieHeader = request.headers.get('cookie') || '';
-  const cookies = cookieHeader.split(';').map((part) => part.trim());
-  for (const cookie of cookies) {
-    const separator = cookie.indexOf('=');
-    if (separator === -1) continue;
-    const key = cookie.slice(0, separator);
-    const value = cookie.slice(separator + 1);
-    if (key === name) return decodeURIComponent(value);
+  const header = request.headers.get('cookie') || '';
+  for (const part of header.split(';')) {
+    const [rawKey, ...rawValue] = part.trim().split('=');
+    if (rawKey === name) return decodeURIComponent(rawValue.join('='));
   }
   return '';
 }
@@ -28,16 +24,18 @@ async function hmacSha256(value, secret) {
 export default async function middleware(request) {
   const password = process.env.SITE_PASSWORD;
   const secret = process.env.AUTH_SECRET;
-  const token = readCookie(request, 'vvp_guest');
 
   if (!password || !secret) {
-    return Response.redirect(new URL('/?error=config', request.url));
+    return Response.redirect(new URL('/', request.url), 307);
   }
 
+  const token = readCookie(request, 'vvp_guest');
   const expected = await hmacSha256(password, secret);
   if (token !== expected) {
-    return Response.redirect(new URL('/', request.url));
+    return Response.redirect(new URL('/', request.url), 307);
   }
+
+  // Returning undefined allows the authorized request to continue.
 }
 
 export const config = {

@@ -9,13 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="/login.css" />
 </head>
 <body>
   <main class="access-page">
     <section class="access-panel" aria-labelledby="access-title">
       <div class="logo-wrap">
-        <img src="assets/vvp-logo.jpeg" alt="Vineyard Vista Properties" class="access-logo" />
+        <img src="/vvp-logo.jpeg" alt="Vineyard Vista Properties" class="access-logo" />
       </div>
       <div class="access-copy">
         <p class="eyebrow">Private Guest Guide</p>
@@ -23,18 +23,17 @@
         <p class="intro">Enter the guest password to access the house guide and our favorite places around Martha's Vineyard.</p>
       </div>
 
-      <form class="access-form" id="access-form" autocomplete="off">
+      <!-- Deliberately uses a normal POST so authentication works even if browser JavaScript is disabled or a file fails to load. -->
+      <form class="access-form" action="/api/login" method="post" autocomplete="off">
         <label for="password">Guest password</label>
         <div class="field-row">
-          <input id="password" name="password" type="password" inputmode="text" autocomplete="current-password" required aria-describedby="form-status" />
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
           <button type="submit">Enter</button>
         </div>
-        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
 
       <p class="access-note">Vineyard Vista Properties<br><span>Exceptional Homes. Timeless Memories.</span></p>
     </section>
   </main>
-  <script src="login.js"></script>
 </body>
 </html>

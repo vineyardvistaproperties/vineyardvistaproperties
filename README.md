@@ -1,42 +1,46 @@
 # Vineyard Vista Properties — Password-Protected Guest Guide
 
-This is a static HTML/CSS/JavaScript guest-guide website designed for deployment from GitHub to Vercel. The public root page is an elegant password screen. The private guest guide lives at `/guide` and is protected by Vercel Routing Middleware and an HttpOnly authentication cookie.
+This package is designed for the same GitHub → Vercel workflow used for the Ikorodu Interiors website.
 
-## Required Vercel environment variables
+## Important: upload the files at the repository root
 
-Before the site will allow access, add these in **Vercel → Project → Settings → Environment Variables**:
+When you open the GitHub repository, you should immediately see:
+
+- `index.html`
+- `guide.html`
+- `login.css`
+- `styles.css`
+- `script.js`
+- `middleware.js`
+- `vercel.json`
+- `package.json`
+- `robots.txt`
+- `api/`
+- `vvp-logo.jpeg`
+
+Do **not** upload a parent folder that contains these files one level down.
+
+## Vercel environment variables
+
+In Vercel → Project → Settings → Environment Variables, create:
 
 - `SITE_PASSWORD` = `MVY2027`
-- `AUTH_SECRET` = a long random private string (at least 32 characters)
+- `AUTH_SECRET` = your long private authentication secret
 
-Add both variables to **Production**, **Preview**, and **Development** if you want the same behavior in all environments. Redeploy after adding or changing them.
+Apply both to **Production**. Applying them to Preview as well is recommended.
 
-## GitHub → Vercel deployment
+After adding or changing environment variables, create a **new Production deployment** (Redeploy is fine).
 
-1. Create a GitHub repository for the site.
-2. Upload the contents of this folder to the repository root. Do not upload only the ZIP file.
-3. In Vercel, choose **Add New → Project** and import the GitHub repository.
-4. Framework Preset: **Other**.
-5. Leave Build Command and Output Directory blank.
-6. Add the two environment variables above before the production deployment, or add them afterward and redeploy.
-7. Deploy.
+## Why this corrected version is more robust
 
-After deployment, visiting the root URL displays the password screen. The guest enters `MVY2027`, receives a secure HttpOnly cookie, and is sent to `/guide`. The cookie lasts seven days. Selecting **Sign out** clears it and returns to the password page.
+The login form now submits directly to `/api/login` with an ordinary HTML POST request. It does not depend on `login.js` or browser JavaScript, so the password can no longer appear in the URL as `?password=...` if a script fails to load.
 
-## Important security note
+On a successful login, the server sets a secure HttpOnly authentication cookie and redirects to `/guide`. Routing middleware checks that cookie before allowing access to the guide.
 
-The password is checked server-side, not in browser JavaScript. For best privacy, keep the GitHub repository private so the guest-guide HTML itself is not publicly browsable through source control.
+## Test after deployment
 
-## Files
-
-- `index.html` — password landing page
-- `login.css` — password page styling
-- `login.js` — submits the password to the server-side login endpoint
-- `guide.html` — private guest guide
-- `styles.css` — guest-guide styling
-- `script.js` — guest-guide navigation behavior
-- `api/login.js` — validates the password and creates the authentication cookie
-- `api/logout.js` — clears the authentication cookie
-- `middleware.js` — protects `/guide`
-- `vercel.json` — clean URL, routing, privacy headers
-- `assets/` — Vineyard Vista logo assets
+1. Open a private/incognito browser window.
+2. Visit your production domain.
+3. Enter `MVY2027`.
+4. You should be redirected to `/guide`.
+5. Use the Sign Out link to clear the guest session.
