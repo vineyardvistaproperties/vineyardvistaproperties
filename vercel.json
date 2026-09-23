@@ -1,20 +1,43 @@
 {
-  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/login",
+      "destination": "/login.html"
+    },
+    {
+      "source": "/",
+      "destination": "/api/protected?route=home"
+    },
+    {
+      "source": "/guide",
+      "destination": "/api/protected?route=guide"
+    },
+    {
+      "source": "/management",
+      "destination": "/api/protected?route=management"
+    },
+    {
+      "source": "/management/rentals",
+      "destination": "/api/protected?route=rentals"
+    },
+    {
+      "source": "/management/house-standards",
+      "destination": "/api/protected?route=house-standards"
+    },
+    {
+      "source": "/management/property",
+      "destination": "/api/protected?route=property"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }
-      ]
-    },
-    {
-      "source": "/guide",
-      "headers": [
-        { "key": "Cache-Control", "value": "private, no-store, max-age=0" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
       ]
     }
-  ],
-  "rewrites": [
-    { "source": "/guide", "destination": "/guide.html" }
   ]
 }

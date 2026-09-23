@@ -1,0 +1,40 @@
+VINEYARD VISTA PROPERTIES — COMPLETE PRIVATE DEMO SITE
+
+EDITABLE PAGE FILES
+- index.html                  Main house marketing + booking site
+- guide.html                  Guest Experience / About This House
+- login.html                  Password login screen
+- management.html             Management — Governance
+- rentals.html                Management — Rentals & Agreements
+- house-standards.html        Management — House Standards
+- property-management.html    Management — Property Management
+
+SHARED FRONT-END
+- styles.css
+- script.js
+
+VERCEL / AUTHENTICATION
+- vercel.json
+- api/login.js
+- api/logout.js
+- api/protected.js
+- api/request.js
+- api/templates.js
+
+PASSWORDS VIA VERCEL ENVIRONMENT VARIABLES
+- SITE_PASSWORD=MVY2027
+- MANAGEMENT_PASSWORD=ABCgang
+- AUTH_SECRET=<long random secret>
+
+ROUTES
+/                              Site password -> main marketing/booking site
+/guide                         Site password -> About This House
+/management                    Site password + Management password -> Governance
+/management/rentals            Site password + Management password -> Rentals & Agreements
+/management/house-standards    Site password + Management password -> House Standards
+/management/property           Site password + Management password -> Property Management
+
+NOTE
+The HTML files are included for easy editing and review. The live Vercel routes are served
+through api/protected.js using the corresponding copies embedded in api/templates.js.
+After editing HTML, api/templates.js should be regenerated/synchronized before deployment.
