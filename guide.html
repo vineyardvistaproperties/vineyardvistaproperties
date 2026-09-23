@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0D2340" />
-  <meta name="description" content="Vineyard Vista Properties private guest guide for Martha's Vineyard." />
   <meta name="robots" content="noindex,nofollow,noarchive" />
   <title>Vineyard Vista Properties | Private Guest Guide</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,212 +15,37 @@
   <header class="site-header" id="top">
     <div class="brand-row shell">
       <a class="brand" href="#top" aria-label="Vineyard Vista Properties home">
-        <span class="brand-name">Vineyard Vista</span>
-        <span class="brand-sub">Properties</span>
+        <span class="brand-name" id="brand-name">Vineyard Vista</span>
+        <span class="brand-sub" id="brand-sub">Properties</span>
       </a>
-      <div class="header-actions"><a class="logout-link" href="/api/logout">Sign out</a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button></div>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#house">House</a>
-        <a href="#favorites">Favorites</a>
-        <a href="#dining">Dining</a>
-        <a href="#beaches">Beaches</a>
-        <a href="#transportation">Transportation</a>
-        <a href="#explore">Explore</a>
-      </nav>
+      <div class="header-actions">
+        <a class="logout-link" href="/api/logout">Sign out</a>
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+      </div>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation"></nav>
     </div>
   </header>
 
-  <main>
+  <main id="guide-root" aria-live="polite">
     <section class="hero shell">
       <div class="hero-copy">
-        <p class="kicker">Private Guest Guide</p>
-        <h1>Welcome to the Vineyard.</h1>
-        <p class="hero-text">A thoughtful guide to the house, Edgartown, and a few of our favorite places on Martha's Vineyard.</p>
-        <a class="text-link" href="#house">Start with the house <span aria-hidden="true">→</span></a>
+        <p class="kicker" id="hero-kicker"></p>
+        <h1 id="hero-title"></h1>
+        <p class="hero-text" id="hero-text"></p>
+        <a class="text-link" id="hero-link" href="#house"></a>
       </div>
-      <div class="hero-mark" aria-hidden="true">
-        <img src="vvp-logo.jpeg" alt="" />
-      </div>
+      <div class="hero-mark" aria-hidden="true"><img src="/vvp-logo.jpeg" alt="" /></div>
     </section>
-
-    <section class="section shell" id="house">
-      <div class="section-heading"><h2>The House</h2></div>
-      <div class="house-strip">
-        <div><span class="mini-label">Wi-Fi</span><strong>[NETWORK NAME]</strong><span>[PASSWORD]</span></div>
-        <div><span class="mini-label">Check-in</span><strong>[4:00 PM]</strong><span>Entry: [DOOR CODE / INSTRUCTIONS]</span></div>
-        <div><span class="mini-label">Guest Support</span><strong>[PROPERTY MANAGER]</strong><a href="tel:+10000000000">[PHONE NUMBER]</a></div>
-      </div>
-      <div class="split-list">
-        <div>
-          <h3>House Essentials</h3>
-          <dl class="details-list">
-            <div><dt>Parking</dt><dd>[PARKING INSTRUCTIONS]</dd></div>
-            <div><dt>Beach gear</dt><dd>[CHAIRS, TOWELS, UMBRELLAS, COOLER]</dd></div>
-            <div><dt>Thermostat</dt><dd>[LOCATION / INSTRUCTIONS]</dd></div>
-            <div><dt>Laundry</dt><dd>[LOCATION / INSTRUCTIONS]</dd></div>
-            <div><dt>Grill</dt><dd>[FUEL / TOOLS / USE NOTES]</dd></div>
-            <div><dt>Trash & recycling</dt><dd>[BIN LOCATION / PICKUP]</dd></div>
-          </dl>
-        </div>
-        <div>
-          <h3>House Notes</h3>
-          <ul class="clean-list">
-            <li>No smoking or vaping anywhere on the property.</li>
-            <li>Only registered guests may stay overnight.</li>
-            <li>Pets: [POLICY / ADDENDUM DETAILS].</li>
-            <li>Please rinse beach sand outdoors before coming inside.</li>
-            <li>Close and secure windows and doors when leaving the house.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="favorites">
-      <div class="shell">
-        <div class="section-heading"><h2>Our Favorites</h2></div>
-        <div class="favorites-grid">
-          <div class="favorite"><span>Morning</span><p>Behind the Bookstore · Rosewater Market · Espresso Love</p></div>
-          <div class="favorite"><span>Beach Day</span><p>Katama General Store · South Beach · Bend-in-the-Road Beach</p></div>
-          <div class="favorite"><span>Dinner</span><p>Bettini · l'étoile · Alchemy</p></div>
-          <div class="favorite"><span>Sunset</span><p>Lighthouse Beach · Harbor View Hotel veranda · Atlantic patio</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell" id="explore">
-      <div class="section-heading"><h2>Coffee</h2></div>
-      <div class="directory-grid">
-        <article class="place">
-          <h3>Behind the Bookstore</h3>
-          <p>Courtyard coffee, breakfast, lunch, and an easy morning stop just off Main Street.</p>
-          <div class="place-meta"><span>44 Main St, Edgartown</span><a href="tel:+15086278463">508-627-8463</a></div>
-          <div class="place-links"><a href="https://www.edgartownbooks.com/contact" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=44+Main+St+Edgartown+MA+02539" target="_blank" rel="noopener">Directions</a></div>
-        </article>
-        <article class="place">
-          <h3>Rosewater Market</h3>
-          <p>Coffee, breakfast, prepared food, baked goods, specialty groceries, and gifts.</p>
-          <div class="place-meta"><span>20 South Summer St, Edgartown</span><a href="tel:+15086271270">508-627-1270</a></div>
-          <div class="place-links"><a href="https://www.rosewatermv.com/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=20+South+Summer+St+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div>
-        </article>
-        <article class="place">
-          <h3>Espresso Love</h3>
-          <p>Specialty coffee, pastries, breakfast sandwiches, salads, and lunch near Main Street.</p>
-          <div class="place-meta"><span>17 Church St, Edgartown</span><a href="tel:+15086279211">508-627-9211</a></div>
-          <div class="place-links"><a href="https://espressolove.com/marthas-vineyard/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=17+Church+St+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div>
-        </article>
-      </div>
-
-      <div class="subsection-heading"><h2>Groceries</h2></div>
-      <div class="directory-grid">
-        <article class="place">
-          <h3>Stop & Shop</h3>
-          <p>The practical choice for a full grocery run, household staples, produce, pantry items, and everyday necessities.</p>
-          <div class="place-meta"><span>225 Upper Main St, Edgartown</span><a href="tel:+15086279522">508-627-9522</a></div>
-          <div class="place-links"><a href="https://stores.stopandshop.com/ma/edgartown/225-upper-main-street" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=225+Upper+Main+St+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div>
-        </article>
-        <article class="place">
-          <h3>Edgartown Meat & Fish Market</h3>
-          <p>Butcher-cut meats, fresh seafood, prepared foods, gourmet groceries, and excellent grilling provisions.</p>
-          <div class="place-meta"><span>240 Edgartown-Vineyard Haven Rd, Edgartown</span><a href="tel:+15086276200">508-627-6200</a></div>
-          <div class="place-links"><a href="https://edgartownmeatandfish.com/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=240+Edgartown+Vineyard+Haven+Rd+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div>
-        </article>
-        <article class="place">
-          <h3>Katama General Store</h3>
-          <p>Prepared food, picnic provisions, drinks, and beach-day essentials on the way to South Beach.</p>
-          <div class="place-meta"><span>170 Katama Rd, Edgartown</span><a href="tel:+15086275071">508-627-5071</a></div>
-          <div class="place-links"><a href="https://www.katamageneral.com/general-5" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=170+Katama+Rd+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div>
-        </article>
-      </div>
-
-      <div class="subsection-heading"><h2>Provisions</h2></div>
-      <div class="directory-grid two-col">
-        <article class="place">
-          <h3>Rosewater Spirits</h3>
-          <p>Our pick for wine, plus a thoughtful selection of spirits, beer, cocktail ingredients, and entertaining provisions.</p>
-          <div class="place-meta"><span>65 Main St, Edgartown</span><a href="tel:+17743101203">774-310-1203</a></div>
-          <div class="place-links"><a href="https://www.rosewatermv.com/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=65+Main+St+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div>
-        </article>
-        <article class="place">
-          <h3>Big Ed's General Store</h3>
-          <p>A convenient stop across from Stop & Shop for liquor, beer, mixers, snacks, and other last-minute essentials.</p>
-          <div class="place-meta"><span>Upper Main St, Edgartown · across from Stop & Shop</span><span>Local shop</span></div>
-          <div class="place-links"><a href="https://www.google.com/maps/search/?api=1&query=Big+Ed%27s+General+Store+Edgartown+MA" target="_blank" rel="noopener">Map</a></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section alt" id="dining">
-      <div class="shell">
-        <div class="section-heading"><h2>Dining</h2></div>
-        <div class="directory-grid">
-          <article class="place"><h3>Bettini</h3><p>Polished waterfront dining at Harbor View Hotel with a refined menu and a classic Edgartown setting.</p><div class="place-meta"><span>131 North Water St, Edgartown</span><a href="tel:+15086273767">508-627-3767</a></div><div class="place-links"><a href="https://harborviewhotel.com/dining/bettini-restaurant/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=Bettini+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div></article>
-          <article class="place"><h3>l'étoile</h3><p>An intimate Edgartown favorite for a special dinner in a historic house just beyond the center of town.</p><div class="place-meta"><span>22 North Water St, Edgartown</span><a href="tel:+15086275187">508-627-5187</a></div><div class="place-links"><a href="https://www.letoile.net/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=L%27etoile+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div></article>
-          <article class="place"><h3>Alchemy</h3><p>A longstanding Main Street favorite for dinner and cocktails with a lively but polished atmosphere.</p><div class="place-meta"><span>71 Main St, Edgartown</span><a href="tel:+15086279999">508-627-9999</a></div><div class="place-links"><a href="https://www.alchemybistroandbar.com/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=Alchemy+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div></article>
-          <article class="place"><h3>Atlantic Fish & Chop House</h3><p>Waterfront dining at the foot of Main Street with harbor views and a livelier evening scene.</p><div class="place-meta"><span>2 Main St, Edgartown</span><a href="tel:+15086277001">508-627-7001</a></div><div class="place-links"><a href="https://www.atlanticmv.com/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=Atlantic+Fish+and+Chop+House+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell" id="beaches">
-      <div class="section-heading"><h2>Beaches</h2></div>
-      <div class="directory-grid">
-        <article class="place"><h3>South Beach</h3><p>Wide Atlantic shoreline and rolling surf. Best for a full beach setup and a classic Katama beach day.</p><div class="place-meta"><span>Katama / Herring Creek Rd, Edgartown</span><a href="https://www.edgartown-ma.us/departments/parks" target="_blank" rel="noopener">Town beach information</a></div></article>
-        <article class="place"><h3>Bend-in-the-Road Beach</h3><p>Calmer water along Joseph Sylvia State Beach with convenient bike-trail access and an easier setup for families.</p><div class="place-meta"><span>Beach Rd, Edgartown</span><a href="https://www.edgartown-ma.us/departments/parks" target="_blank" rel="noopener">Town beach information</a></div></article>
-        <article class="place"><h3>Lighthouse Beach</h3><p>A scenic harbor beach within walking distance of town. Ideal for a shorter outing, picnic, or sunset stop.</p><div class="place-meta"><span>121 North Water St, Edgartown</span><a href="https://www.edgartown-ma.us/" target="_blank" rel="noopener">Town of Edgartown</a></div></article>
-      </div>
-    </section>
-
-    <section class="section alt" id="transportation">
-      <div class="shell">
-        <div class="section-heading"><h2>Transportation</h2></div>
-        <div class="directory-grid">
-          <article class="place"><h3>Steamship Authority</h3><p>Vehicle travel on the Woods Hole–Martha's Vineyard route requires a reservation. Passenger reservations are not required on the traditional Vineyard ferries.</p><div class="place-meta"><a href="tel:+15084778600">Reservations: 508-477-8600</a><span>Year-round Vineyard Haven service; seasonal Oak Bluffs service.</span></div><div class="place-links"><a href="https://www.steamshipauthority.com/reservations" target="_blank" rel="noopener">Reservations</a><a href="https://steamshipauthority.com/schedules/availability" target="_blank" rel="noopener">Schedules</a></div></article>
-          <article class="place"><h3>Adam Cab</h3><p>Island-wide taxi service for the airport, ferry terminals, Edgartown, beaches, dinners, and private transportation.</p><div class="place-meta"><span>256 Edgartown-Vineyard Haven Rd, Edgartown</span><a href="tel:+15086274462">508-627-4462</a></div><div class="place-links"><a href="https://adamcabmv.com/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=Adam+Cab+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div></article>
-          <article class="place"><h3>Vineyard Transit Authority</h3><p>The VTA provides year-round island bus service. Check the current route map and seasonal schedules before heading out.</p><div class="place-meta"><span>Island-wide public transit</span><a href="https://www.vineyardtransit.com/route-maps" target="_blank" rel="noopener">Route maps & schedules</a></div><div class="place-links"><a href="https://www.vineyardtransit.com/" target="_blank" rel="noopener">VTA website</a><a href="https://www.vineyardtransit.com/route-maps" target="_blank" rel="noopener">Bus routes</a></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell">
-      <div class="section-heading"><h2>Family, Baby & Pet Amenities</h2></div>
-      <div class="prose narrow">
-        <p>We're delighted to welcome guests of all ages—including our littlest visitors and four-legged family members. To help make your stay more comfortable, we've provided a selection of baby, children's, and pet items. Many are the same products our own families use and enjoy, while others have been thoughtfully added to accommodate guests.</p>
-        <p>Because every child and pet has unique needs, we ask that parents and pet owners carefully inspect all equipment before use to ensure it is appropriate, properly assembled, and in good working condition. Use of these amenities is entirely at your discretion and responsibility.</p>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="shell">
-        <div class="section-heading"><h2>Tick Awareness</h2></div>
-        <div class="prose narrow">
-          <p>Ticks are common on Martha's Vineyard, particularly in grassy and wooded areas. We recommend using repellent and doing a quick tick check after time outdoors, especially for children and pets.</p>
-          <p><a class="text-link" href="https://www.mvboh.com/tickborneillness" target="_blank" rel="noopener">Martha's Vineyard Boards of Health guidance <span aria-hidden="true">→</span></a></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell">
-      <div class="section-heading"><h2>We're Here to Help</h2></div>
-      <div class="prose narrow">
-        <p>We hope every detail of your stay exceeds your expectations. If you notice anything that is missing or not working as expected, please let us know as soon as possible. We're always happy to assist and greatly appreciate your feedback, as it helps us maintain the home and continually enhance the experience for future guests.</p>
-        <p>Thank you for choosing Vineyard Vista Properties. We hope this home becomes a place where wonderful memories are made, and we wish you a relaxing and unforgettable stay on Martha's Vineyard.</p>
-      </div>
-    </section>
-
-    <section class="section shell final-details">
-      <details><summary>Appliances & Home Systems</summary><div class="details-body"><p>[TV / STREAMING / SONOS / HVAC / FIREPLACE / OUTDOOR SHOWER / COFFEE SETUP / GENERATOR]</p></div></details>
-      <details><summary>Local Services</summary><div class="details-body"><p>[URGENT CARE / PHARMACY / HOSPITAL / PRIVATE CHEF / BABYSITTER / HOUSEKEEPING / CONCIERGE]</p></div></details>
-      <details><summary>Guest Feedback</summary><div class="details-body"><p>[PRIVATE FEEDBACK LINK / CONTACT DETAILS]</p></div></details>
-    </section>
+    <div id="dynamic-sections"></div>
   </main>
 
   <footer>
     <div class="shell footer-inner">
-      <div><div class="footer-brand">Vineyard Vista Properties</div><div class="footer-tagline">Exceptional Homes. Timeless Memories.</div></div>
+      <div><div class="footer-brand" id="footer-brand"></div><div class="footer-tagline" id="footer-tagline"></div></div>
       <a href="#top">Back to top</a>
     </div>
   </footer>
 
-  <script src="/script.js"></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>
