@@ -16,11 +16,11 @@ SHARED FRONT-END
 
 VERCEL / AUTHENTICATION
 - vercel.json
-- api/login.js
-- api/logout.js
-- api/protected.js
-- api/request.js
-- api/templates.js
+- api/login.mjs
+- api/logout.mjs
+- api/protected.mjs
+- api/request.mjs
+- api/templates.mjs
 
 PASSWORDS VIA VERCEL ENVIRONMENT VARIABLES
 - SITE_PASSWORD=MVY2027
@@ -37,8 +37,8 @@ ROUTES
 
 NOTE
 The HTML files are included for easy editing and review. The live Vercel routes are served
-through api/protected.js using the corresponding copies embedded in api/templates.js.
-After editing HTML, api/templates.js should be regenerated/synchronized before deployment.
+through api/protected.mjs using the corresponding copies embedded in api/templates.mjs.
+After editing HTML, api/templates.mjs should be regenerated/synchronized before deployment.
 
 
 CURRENT DEMO ACCESS

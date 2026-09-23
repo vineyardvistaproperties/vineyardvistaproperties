@@ -23,7 +23,7 @@ Management is intentionally absent from the public navigation and main-page cont
 The request form currently validates and submits to `/api/request`, which returns a demo reference number but does not send email or collect payment. The intended production workflow remains: request → approval → Rental Agreement (+ Pet Addendum when applicable) → signatures → payment → confirmed reservation → pre-arrival communications → About This House. Party/event requests occur only after the house booking is confirmed and require separate written approval and a Party Addendum.
 
 ## Deployment
-Upload this folder to the GitHub repository connected to Vercel. The content pages are stored inside `api/templates.js` and served only after authentication, rather than existing as directly accessible static HTML files.
+Upload this folder to the GitHub repository connected to Vercel. The content pages are stored inside `api/templates.mjs` and served only after authentication, rather than existing as directly accessible static HTML files.
 
 ## Editable page files included
 
@@ -35,9 +35,9 @@ Upload this folder to the GitHub repository connected to Vercel. The content pag
 - `house-standards.html` — House Standards
 - `property-management.html` — Property Management
 
-The live Vercel routes are protected by `api/protected.js`. For convenience, the editable
+The live Vercel routes are protected by `api/protected.mjs`. For convenience, the editable
 HTML versions are also included at the project root. The same page markup is embedded in
-`api/templates.js`, which is what the protected routes currently serve.
+`api/templates.mjs`, which is what the protected routes currently serve.
 
 Required Vercel environment variables:
 
