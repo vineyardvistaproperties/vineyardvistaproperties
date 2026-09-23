@@ -31,9 +31,9 @@ Upload this folder to the GitHub repository connected to Vercel. The content pag
 - `guide.html` — Guest Experience / About This House
 - `login.html` — authentication screen
 - `management.html` — Governance
-- `rentals.html` — Rentals & Agreements
-- `house-standards.html` — House Standards
-- `property-management.html` — Property Management
+- `management.html#rentals` — Rentals & Agreements
+- `management.html#house-standards` — House Standards
+- `management.html#property-management` — Property Management
 
 The live Vercel routes are protected by `api/protected.mjs`. For convenience, the editable
 HTML versions are also included at the project root. The same page markup is embedded in
