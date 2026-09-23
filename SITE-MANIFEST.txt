@@ -12,6 +12,7 @@ EDITABLE PAGE FILES
 SHARED FRONT-END
 - styles.css
 - script.js
+- auth-client.js              Preview/demo access gate
 
 VERCEL / AUTHENTICATION
 - vercel.json
@@ -38,3 +39,9 @@ NOTE
 The HTML files are included for easy editing and review. The live Vercel routes are served
 through api/protected.js using the corresponding copies embedded in api/templates.js.
 After editing HTML, api/templates.js should be regenerated/synchronized before deployment.
+
+
+CURRENT DEMO ACCESS
+- Entire site preview: MVY2027
+- Management: ABCgang
+- Pet approval fields reveal dynamically after selecting 'I would like to bring a pet'.
