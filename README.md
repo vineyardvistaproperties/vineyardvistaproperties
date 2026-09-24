@@ -39,3 +39,7 @@ The public homepage includes the latest integrated treatment: Land Rover in navi
 - Product cards use the exact approved items only; no substitute products are used.
 - Amazon cards link to item-level Amazon product pages and use their corresponding Amazon-hosted product images.
 - Williams Sonoma cards link to item-level Williams Sonoma product pages and use their corresponding Williams Sonoma-hosted product images.
+
+
+## Management
+All management content is consolidated in `management.html`. Section navigation uses in-page anchors; there are no separate management tab HTML files.
