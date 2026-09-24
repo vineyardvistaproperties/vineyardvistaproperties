@@ -5,10 +5,7 @@ function getCookie(request, name) {
 
   for (const part of header.split(';')) {
     const [key, ...rest] = part.trim().split('=');
-
-    if (key === name) {
-      return rest.join('=');
-    }
+    if (key === name) return rest.join('=');
   }
 
   return undefined;
@@ -16,7 +13,7 @@ function getCookie(request, name) {
 
 function bytesToHex(bytes) {
   return Array.from(bytes)
-    .map(byte => byte.toString(16).padStart(2, '0'))
+    .map((byte) => byte.toString(16).padStart(2, '0'))
     .join('');
 }
 
@@ -24,10 +21,7 @@ async function expectedToken(area, secret) {
   const key = await crypto.subtle.importKey(
     'raw',
     new TextEncoder().encode(secret),
-    {
-      name: 'HMAC',
-      hash: 'SHA-256'
-    },
+    { name: 'HMAC', hash: 'SHA-256' },
     false,
     ['sign']
   );
@@ -45,25 +39,19 @@ async function verify(request, area, secret) {
   if (!secret) return false;
 
   const cookieName =
-    area === 'management'
-      ? 'vvp_management'
-      : 'vvp_site';
+    area === 'management' ? 'vvp_management' : 'vvp_site';
 
   const actual = getCookie(request, cookieName);
-
   if (!actual) return false;
 
   const expected = await expectedToken(area, secret);
-
   return actual === expected;
 }
 
 function loginRedirect(request, pathname, area) {
-  const url = new URL('/login.html', request.url);
-
+  const url = new URL('/login', request.url);
   url.searchParams.set('next', pathname);
   url.searchParams.set('area', area);
-
   return Response.redirect(url, 302);
 }
 
@@ -71,9 +59,9 @@ export default async function middleware(request) {
   const url = new URL(request.url);
   const path = url.pathname;
 
-  // These must remain accessible without authentication.
   if (
     path.startsWith('/api/') ||
+    path === '/login' ||
     path === '/login.html' ||
     path.endsWith('.css') ||
     path.endsWith('.js') ||
@@ -89,29 +77,20 @@ export default async function middleware(request) {
 
   const secret = process.env.AUTH_SECRET;
 
-  // First require the main-site password.
   const siteOk = await verify(request, 'site', secret);
-
   if (!siteOk) {
-    return loginRedirect(
-      request,
-      path + url.search,
-      'site'
-    );
+    return loginRedirect(request, path + url.search, 'site');
   }
 
-  // Management and pitch require the second password as well.
-  if (
+  const isManagement =
     path === '/management' ||
     path === '/management.html' ||
+    path.startsWith('/management/') ||
     path === '/pitch' ||
-    path === '/pitch.html'
-  ) {
-    const managementOk = await verify(
-      request,
-      'management',
-      secret
-    );
+    path === '/pitch.html';
+
+  if (isManagement) {
+    const managementOk = await verify(request, 'management', secret);
 
     if (!managementOk) {
       return loginRedirect(

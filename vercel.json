@@ -1,10 +1,29 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    {"source":"/guide","destination":"/guide.html"},
-    {"source":"/management","destination":"/management.html"},
-    {"source":"/management/rentals","destination":"/management.html"},
-    {"source":"/management/property","destination":"/management.html"},
-    {"source":"/management/house-standards","destination":"/management.html"}
+    {
+      "source": "/guide",
+      "destination": "/guide.html"
+    },
+    {
+      "source": "/management",
+      "destination": "/management.html"
+    },
+    {
+      "source": "/management/rentals",
+      "destination": "/management.html"
+    },
+    {
+      "source": "/management/property",
+      "destination": "/management.html"
+    },
+    {
+      "source": "/management/house-standards",
+      "destination": "/management.html"
+    },
+    {
+      "source": "/pitch",
+      "destination": "/pitch.html"
+    }
   ]
 }
