@@ -171,6 +171,43 @@
   #groceries,
   #medical{border-top:1px solid var(--line)}
 </style>
+
+
+
+<style>
+  footer .footer-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px 28px;
+    flex-wrap:wrap;
+  }
+  footer .footer-management,
+  footer .footer-legal,
+  footer .footer-links{
+    display:flex;
+    align-items:center;
+    gap:10px 22px;
+    flex-wrap:wrap;
+  }
+  footer .footer-management a,
+  footer .footer-legal a,
+  footer .footer-links a{
+    margin:0;
+    white-space:nowrap;
+  }
+  @media(max-width:760px){
+    footer .footer-inner{
+      align-items:flex-start;
+      gap:16px;
+    }
+    footer .footer-management,
+    footer .footer-legal,
+    footer .footer-links{
+      gap:8px 16px;
+    }
+  }
+</style>
 </head>
 <body>
 <header class="site-header" id="top"><div class="brand-row shell"><a class="brand" href="index.html" aria-label="Vineyard Vista Properties home"><span class="brand-name">Vineyard Vista</span><span class="brand-sub">Properties</span></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button><nav class="site-nav" aria-label="Primary navigation"><a href="#house">House</a><a href="#coffee">Coffee</a><a href="#groceries">Groceries</a><a href="#provisions">Provisions</a><a href="#dining">Dining</a><a href="#beaches">Beaches</a><a href="#transportation">Transportation</a><a href="#medical">Medical</a></nav></div></header>
@@ -285,4 +322,4 @@
   </div>
 </section>
 </main>
-<footer><div class="shell footer-inner"><div><div class="footer-brand">Vineyard Vista Properties</div><div class="footer-tagline">Exceptional Homes. Timeless Memories.</div></div><div class="footer-links"><a href="index.html">Vineyard Vista Home</a><a href="#top">Back to top</a><a class="partner-link" href="management.html">Management</a><a class="partner-link" href="pitch.html">Pitch</a><a href="/api/logout?area=site">Sign out</a></div></div></footer><script src="auth-client.js"></script><script src="script.js"></script></body></html>
+<footer><div class="shell footer-inner"><div><div class="footer-brand">Vineyard Vista Properties</div><div class="footer-tagline">Exceptional Homes. Timeless Memories.</div></div><div class="footer-links"><a href="index.html">Vineyard Vista Home</a><a href="#top">Back to top</a><a class="partner-link" href="management.html">Management</a><a class="partner-link" href="pitch.html">Investors</a><a href="/api/logout?area=site">Sign out</a></div></div></footer><script src="auth-client.js"></script><script src="script.js"></script></body></html>

@@ -197,6 +197,43 @@ footer{background:#081A30;color:#fff;padding:38px 0}
     margin-bottom:28px;
   }
 </style>
+
+
+
+<style>
+  footer .footer-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px 28px;
+    flex-wrap:wrap;
+  }
+  footer .footer-management,
+  footer .footer-legal,
+  footer .footer-links{
+    display:flex;
+    align-items:center;
+    gap:10px 22px;
+    flex-wrap:wrap;
+  }
+  footer .footer-management a,
+  footer .footer-legal a,
+  footer .footer-links a{
+    margin:0;
+    white-space:nowrap;
+  }
+  @media(max-width:760px){
+    footer .footer-inner{
+      align-items:flex-start;
+      gap:16px;
+    }
+    footer .footer-management,
+    footer .footer-legal,
+    footer .footer-links{
+      gap:8px 16px;
+    }
+  }
+</style>
 </head>
 <body><header class="site-header" id="top"><div class="brand-row shell"><a class="brand" href="index.html"><span class="brand-name">Vineyard Vista</span><span class="brand-sub">Properties</span></a><button aria-expanded="false" aria-label="Open navigation" class="menu-toggle">Menu</button><nav aria-label="Primary navigation" class="site-nav"><a href="#house">The House</a><a href="#vineyard">The Vineyard</a><a href="#land-rover">Land Rover</a><a href="#availability">Availability</a><a href="#request">Stay</a></nav></div></header>
 <main>
@@ -299,7 +336,7 @@ footer{background:#081A30;color:#fff;padding:38px 0}
 </fieldset><button type="submit">Submit stay request</button><p aria-live="polite" class="form-status" id="request-status"></p></form></div></section>
 <section class="section guest-experience"><div class="shell guest-experience-inner"><div><p class="kicker">Guest Experience</p><h2>About This House</h2><p>For confirmed guests: everything needed once the stay begins, from Wi-Fi and house systems to Edgartown favorites, beaches, dining, provisions and transportation.</p></div><a class="button-link light" href="guide.html">Open the guide</a></div></section>
 </main>
-<footer><div class="shell footer-inner"><div><div class="footer-brand">Vineyard Vista Properties</div><div class="footer-tagline">Exceptional Homes. Timeless Memories.</div></div><div class="footer-management"><a href="management.html">Management</a><a href="pitch.html">Pitch</a></div><div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div><div class="footer-links"><a href="/api/logout?area=site">Sign out</a></div></div></footer>
+<footer><div class="shell footer-inner"><div><div class="footer-brand">Vineyard Vista Properties</div><div class="footer-tagline">Exceptional Homes. Timeless Memories.</div></div><div class="footer-management"><a href="management.html">Management</a><a href="pitch.html">Investors</a></div><div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div><div class="footer-links"><a href="/api/logout?area=site">Sign out</a></div></div></footer>
 <script>
 (function () {
   function initPetDisclosure() {
