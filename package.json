@@ -1,5 +1,1 @@
-{
-  "name": "vineyard-vista-private-guest-guide",
-  "private": true,
-  "type": "module"
-}
+{"name":"vineyard-vista-properties","private":true,"type":"module","engines":{"node":"22.x"}}

@@ -1,57 +1,10 @@
 {
+  "cleanUrls": true,
   "rewrites": [
-    {
-      "source": "/login",
-      "destination": "/login.html"
-    },
-    {
-      "source": "/",
-      "destination": "/api/protected?route=home"
-    },
-    {
-      "source": "/guide",
-      "destination": "/api/protected?route=guide"
-    },
-    {
-      "source": "/management",
-      "destination": "/api/protected?route=management"
-    },
-    {
-      "source": "/pitch",
-      "destination": "/api/protected?route=pitch"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow, noarchive"
-        }
-      ]
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/index.html",
-      "destination": "/",
-      "permanent": false
-    },
-    {
-      "source": "/guide.html",
-      "destination": "/guide",
-      "permanent": false
-    },
-    {
-      "source": "/management.html",
-      "destination": "/management",
-      "permanent": false
-    },
-    {
-      "source": "/pitch.html",
-      "destination": "/pitch",
-      "permanent": false
-    }
+    {"source":"/guide","destination":"/guide.html"},
+    {"source":"/management","destination":"/management.html"},
+    {"source":"/management/rentals","destination":"/management.html"},
+    {"source":"/management/property","destination":"/management.html"},
+    {"source":"/management/house-standards","destination":"/management.html"}
   ]
 }

@@ -1,57 +1,41 @@
-# Vineyard Vista Properties — Private Working Demo
+# Vineyard Vista Properties — Full Website Package
 
-## Access model
-- Entire website: `MVY2027`
-- Management: `ABCgang` (after the main-site password)
+Regenerated September 24, 2026.
 
-Set these Vercel environment variables exactly:
+## Access
+- Entire website password: `MVY2027`
+- Management password: `ABCgang` after the main-site password
+
+Set these Vercel environment variables:
 - `SITE_PASSWORD=MVY2027`
 - `MANAGEMENT_PASSWORD=ABCgang`
 - `AUTH_SECRET=<a long random secret>`
 
-## Website structure
-- `/` — house marketing + availability + Request Your Stay workflow
-- `/guide` — Guest Experience / About This House
-- `/management` — Governance
-- `/management/rentals` — Rentals & Agreements
-- `/management/house-standards` — House Standards
-- `/management/property` — Property Management
+## Core files
+- `index.html` — latest public homepage/guest guide, including the integrated Land Rover section and Turo CTA
+- `guide.html` — About This House guest guide
+- `management.html` — consolidated management resource
+- `styles.css` / `script.js` — shared presentation and navigation behavior
+- `login.html`, `middleware.js`, `api/login.js`, `api/logout.js` — private access controls
+- `api/request.js` — demo request endpoint
+- `vercel.json` — clean route rewrites
 
-Management is intentionally absent from the public navigation and main-page content. It appears only in the footer.
+## Management order
+1. Property Operations
+2. Rentals & Agreements
+3. Property Management
+4. House Standards
 
-## Booking demo
-The request form currently validates and submits to `/api/request`, which returns a demo reference number but does not send email or collect payment. The intended production workflow remains: request → approval → Rental Agreement (+ Pet Addendum when applicable) → signatures → payment → confirmed reservation → pre-arrival communications → About This House. Party/event requests occur only after the house booking is confirmed and require separate written approval and a Party Addendum.
-
-## Deployment
-Upload this folder to the GitHub repository connected to Vercel. The content pages are stored inside `api/templates.mjs` and served only after authentication, rather than existing as directly accessible static HTML files.
-
-## Editable page files included
-
-- `index.html` — main Vineyard Vista house marketing and booking experience
-- `guide.html` — Guest Experience / About This House
-- `login.html` — authentication screen
-- `management.html` — Governance
-- `management.html#rentals` — Rentals & Agreements
-- `management.html#house-standards` — House Standards
-- `management.html#property-management` — Property Management
-
-The live Vercel routes are protected by `api/protected.mjs`. For convenience, the editable
-HTML versions are also included at the project root. The same page markup is embedded in
-`api/templates.mjs`, which is what the protected routes currently serve.
-
-Required Vercel environment variables:
-
-- `SITE_PASSWORD=MVY2027`
-- `MANAGEMENT_PASSWORD=ABCgang`
-- `AUTH_SECRET=<long random secret>`
+## Approved product catalog state
 
 
-## Private Partner Pitch
-- `pitch.html` is the private partner pitch page.
-- Production route: `/pitch`.
-- It requires both site access and the separate Management password.
-- It is intentionally not linked from the property-manager Management portal.
+## Land Rover
+The public homepage includes the latest integrated treatment: Land Rover in navigation, black 2017 Range Rover Sport imagery, “Exclusively for Vineyard Vista Guests,” a Turo booking CTA, and one consolidated “Before you book” note. Replace the generic `https://turo.com/` href with the live vehicle listing once available.
 
 
-## Approved Amazon Items
-The House Standards catalog includes 21 items from the supplied Amazon list for which a direct Amazon product page was verified. Five source items were left out pending a verified direct Amazon product URL.
+## Direct retailer image catalog update — September 24, 2026
+
+## House Standards product catalog
+- Product cards use the exact approved items only; no substitute products are used.
+- Amazon cards link to item-level Amazon product pages and use their corresponding Amazon-hosted product images.
+- Williams Sonoma cards link to item-level Williams Sonoma product pages and use their corresponding Williams Sonoma-hosted product images.
