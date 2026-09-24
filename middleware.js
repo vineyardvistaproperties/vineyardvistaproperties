@@ -1,30 +1,89 @@
-import { NextResponse } from 'next/server';
+import { next } from '@vercel/functions';
 
-function decodeB64url(s){
-  s=s.replace(/-/g,'+').replace(/_/g,'/');
-  while(s.length%4)s+='=';
+function decodeB64url(value) {
+  let s = value.replace(/-/g, '+').replace(/_/g, '/');
+  while (s.length % 4) s += '=';
   return atob(s);
 }
-async function verify(token,area,secret){
-  if(!token||!secret)return false;
-  const [body,sig]=token.split('.');
-  if(!body||!sig)return false;
-  const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['verify']);
-  const sigBytes=Uint8Array.from(decodeB64url(sig),c=>c.charCodeAt(0));
-  const ok=await crypto.subtle.verify('HMAC',key,sigBytes,new TextEncoder().encode(body));
-  if(!ok)return false;
-  try{const data=JSON.parse(decodeB64url(body));return data.area===area&&data.exp>Date.now()}catch{return false}
-}
-export async function middleware(req){
-  const p=req.nextUrl.pathname;
-  if(p.startsWith('/api/')||p==='/login.html'||p.startsWith('/assets/')||p.endsWith('.css')||p.endsWith('.js')||p==='/favicon.ico')return NextResponse.next();
-  const secret=process.env.AUTH_SECRET;
-  const siteOk=await verify(req.cookies.get('vvp_site')?.value,'site',secret);
-  if(!siteOk){const u=req.nextUrl.clone();u.pathname='/login.html';u.searchParams.set('next',p);u.searchParams.set('area','site');return NextResponse.redirect(u)}
-  if(p.includes('management')){
-    const mgmtOk=await verify(req.cookies.get('vvp_management')?.value,'management',secret);
-    if(!mgmtOk){const u=req.nextUrl.clone();u.pathname='/login.html';u.searchParams.set('next',p);u.searchParams.set('area','management');return NextResponse.redirect(u)}
+
+function getCookie(request, name) {
+  const header = request.headers.get('cookie') || '';
+  for (const part of header.split(';')) {
+    const [key, ...rest] = part.trim().split('=');
+    if (key === name) return rest.join('=');
   }
-  return NextResponse.next();
+  return undefined;
 }
-export const config={matcher:['/((?!_next/static|_next/image).*)']};
+
+async function verify(token, area, secret) {
+  if (!token || !secret) return false;
+  const [body, sig] = token.split('.');
+  if (!body || !sig) return false;
+
+  try {
+    const key = await crypto.subtle.importKey(
+      'raw',
+      new TextEncoder().encode(secret),
+      { name: 'HMAC', hash: 'SHA-256' },
+      false,
+      ['verify']
+    );
+    const sigBytes = Uint8Array.from(decodeB64url(sig), c => c.charCodeAt(0));
+    const ok = await crypto.subtle.verify(
+      'HMAC',
+      key,
+      sigBytes,
+      new TextEncoder().encode(body)
+    );
+    if (!ok) return false;
+
+    const data = JSON.parse(decodeB64url(body));
+    return data.area === area && Number(data.exp) > Date.now();
+  } catch {
+    return false;
+  }
+}
+
+function loginRedirect(request, pathname, area) {
+  const url = new URL('/login.html', request.url);
+  url.searchParams.set('next', pathname);
+  url.searchParams.set('area', area);
+  return Response.redirect(url, 302);
+}
+
+export default async function middleware(request) {
+  const url = new URL(request.url);
+  const path = url.pathname;
+
+  if (
+    path.startsWith('/api/') ||
+    path === '/login.html' ||
+    path.endsWith('.css') ||
+    path.endsWith('.js') ||
+    path.endsWith('.jpeg') ||
+    path.endsWith('.jpg') ||
+    path.endsWith('.png') ||
+    path === '/favicon.ico'
+  ) {
+    return next();
+  }
+
+  const secret = process.env.AUTH_SECRET;
+  const siteOk = await verify(getCookie(request, 'vvp_site'), 'site', secret);
+  if (!siteOk) return loginRedirect(request, path + url.search, 'site');
+
+  if (path === '/management' || path === '/management.html' || path === '/pitch' || path === '/pitch.html') {
+    const managementOk = await verify(
+      getCookie(request, 'vvp_management'),
+      'management',
+      secret
+    );
+    if (!managementOk) return loginRedirect(request, path + url.search, 'management');
+  }
+
+  return next();
+}
+
+export const config = {
+  matcher: '/((?!api/|favicon.ico).*)',
+};
