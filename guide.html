@@ -7,36 +7,17 @@
     gap:64px;
     align-items:start;
   }
-  .guide-house .essentials-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    column-gap:34px;
-    border-top:1px solid var(--line);
-  }
-  .guide-house .essential-item{
-    padding:17px 0 18px;
-    border-bottom:1px solid var(--line);
-  }
-  .guide-house .essential-item dt{
-    margin:0 0 6px;
-    color:var(--navy);
-    font-weight:500;
-  }
-  .guide-house .essential-item dd{
-    margin:0;
-    color:var(--muted);
-    line-height:1.62;
-  }
-  .guide-house .house-notes-panel{
-    border-top:1px solid var(--line);
-    padding-top:17px;
-  }
+  
+  
+  
+  
+  
   .medical-grid{grid-template-columns:1fr}
   @media(max-width:900px){
     .guide-house .split-list{grid-template-columns:1fr;gap:42px}
   }
   @media(max-width:640px){
-    .guide-house .essentials-grid{grid-template-columns:1fr}
+    
   }
 </style>
 
@@ -144,13 +125,51 @@
   .house-mgmt-notes-first ul{columns:1}
 </style>
 
+
+
 <style>
-  #coffee{
-    border-bottom:1px solid var(--line);
-  }
+  #coffee,
   #groceries{
-    border-top:0;
+    border-top:1px solid var(--line);
   }
+</style>
+
+<style>
+  /* Global spacing refinement for a denser, less scroll-heavy guide */
+  .section{padding-top:54px;padding-bottom:54px}
+  .section.alt{padding-top:54px;padding-bottom:54px}
+  .guide-house{padding-top:48px;padding-bottom:48px}
+  .section-heading{margin-bottom:24px}
+  .subsection-heading{margin-top:34px;margin-bottom:20px}
+  .guide-house-heading{margin-bottom:26px}
+  .house-strip{margin-top:24px;margin-bottom:30px}
+  .house-overview{margin-top:26px}
+  .house-overview-heading{margin-bottom:20px;padding-bottom:14px}
+  .house-mgmt-grid{gap:14px}
+  .house-mgmt-card{padding:20px}
+  .directory-grid{gap:16px}
+  .place{padding:20px}
+  
+  .medical-subcard{margin-top:18px;padding:18px 20px}
+  .help-grid{gap:16px}
+  .help-panel{padding:22px}
+  .prose p{margin-bottom:14px}
+  footer{padding-top:28px;padding-bottom:28px}
+  @media(max-width:760px){
+    .section,.section.alt{padding-top:42px;padding-bottom:42px}
+    .guide-house{padding-top:40px;padding-bottom:40px}
+    .house-mgmt-card,.place,.help-panel{padding:18px}
+  }
+</style>
+
+<style>
+  #medical{border-top:1px solid var(--line)}
+</style>
+
+<style>
+  #coffee,
+  #groceries,
+  #medical{border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
@@ -202,8 +221,8 @@
     </div>
 </div>
 </section>
-<section class="section alt guide-divider-section" id="coffee"><div class="shell"><div class="section-rule" aria-hidden="true"></div><div class="section-heading"><h2>Coffee</h2></div><div class="directory-grid"><article class="place"><h3>Behind the Bookstore</h3><p>Courtyard coffee, breakfast, lunch, and an easy morning stop just off Main Street.</p><div class="place-meta"><span>44 Main St, Edgartown</span><a href="tel:+15086278463">508-627-8463</a></div><div class="place-links"><a href="https://www.btbmv.com/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=44+Main+St+Edgartown+MA+02539" target="_blank" rel="noopener">Directions</a></div></article><article class="place"><h3>Rosewater Market</h3><p>Coffee, breakfast, prepared food, baked goods, specialty groceries, and gifts.</p><div class="place-meta"><span>20 South Summer St, Edgartown</span><a href="tel:+15086271270">508-627-1270</a></div><div class="place-links"><a href="https://www.rosewatermv.com/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=20+South+Summer+St+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div></article><article class="place"><h3>Espresso Love</h3><p>Specialty coffee, pastries, breakfast sandwiches, salads, and lunch near Main Street.</p><div class="place-meta"><span>17 Church St, Edgartown</span><a href="tel:+15086279211">508-627-9211</a></div><div class="place-links"><a href="https://espressolove.com/marthas-vineyard/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=17+Church+St+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div></article></div></div></section>
-<section class="section alt guide-divider-section" id="groceries"><div class="shell"><div class="section-rule" aria-hidden="true"></div><div class="section-heading"><h2>Groceries</h2></div><div class="directory-grid"><article class="place"><h3>Stop &amp; Shop</h3><p>The practical choice for a full grocery run, household staples, produce, pantry items, and everyday necessities.</p><div class="place-meta"><span>225 Upper Main St, Edgartown</span><a href="tel:+15086279522">508-627-9522</a></div><div class="place-links"><a href="https://stores.stopandshop.com/ma/edgartown/225-upper-main-street" target="_blank" rel="noopener">Website</a></div></article><article class="place"><h3>Edgartown Meat &amp; Fish Market</h3><p>Butcher-cut meats, fresh seafood, prepared foods, gourmet groceries, and excellent grilling provisions.</p><div class="place-meta"><span>240 Edgartown-Vineyard Haven Rd, Edgartown</span><a href="tel:+15086276200">508-627-6200</a></div></article><article class="place"><h3>Katama General Store</h3><p>Prepared food, picnic provisions, drinks, and beach-day essentials on the way to South Beach.</p><div class="place-meta"><span>170 Katama Rd, Edgartown</span><a href="tel:+15086275071">508-627-5071</a></div></article></div></div></section>
+<section class="section" id="coffee"><div class="shell"><div class="section-heading"><h2>Coffee</h2></div><div class="directory-grid"><article class="place"><h3>Behind the Bookstore</h3><p>Courtyard coffee, breakfast, lunch, and an easy morning stop just off Main Street.</p><div class="place-meta"><span>44 Main St, Edgartown</span><a href="tel:+15086278463">508-627-8463</a></div><div class="place-links"><a href="https://www.btbmv.com/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=44+Main+St+Edgartown+MA+02539" target="_blank" rel="noopener">Directions</a></div></article><article class="place"><h3>Rosewater Market</h3><p>Coffee, breakfast, prepared food, baked goods, specialty groceries, and gifts.</p><div class="place-meta"><span>20 South Summer St, Edgartown</span><a href="tel:+15086271270">508-627-1270</a></div><div class="place-links"><a href="https://www.rosewatermv.com/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=20+South+Summer+St+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div></article><article class="place"><h3>Espresso Love</h3><p>Specialty coffee, pastries, breakfast sandwiches, salads, and lunch near Main Street.</p><div class="place-meta"><span>17 Church St, Edgartown</span><a href="tel:+15086279211">508-627-9211</a></div><div class="place-links"><a href="https://espressolove.com/marthas-vineyard/" target="_blank" rel="noopener">Website</a><a href="https://www.google.com/maps/search/?api=1&query=17+Church+St+Edgartown+MA" target="_blank" rel="noopener">Directions</a></div></article></div></div></section>
+<section class="section alt" id="groceries"><div class="shell"><div class="section-heading"><h2>Groceries</h2></div><div class="directory-grid"><article class="place"><h3>Stop &amp; Shop</h3><p>The practical choice for a full grocery run, household staples, produce, pantry items, and everyday necessities.</p><div class="place-meta"><span>225 Upper Main St, Edgartown</span><a href="tel:+15086279522">508-627-9522</a></div><div class="place-links"><a href="https://stores.stopandshop.com/ma/edgartown/225-upper-main-street" target="_blank" rel="noopener">Website</a></div></article><article class="place"><h3>Edgartown Meat &amp; Fish Market</h3><p>Butcher-cut meats, fresh seafood, prepared foods, gourmet groceries, and excellent grilling provisions.</p><div class="place-meta"><span>240 Edgartown-Vineyard Haven Rd, Edgartown</span><a href="tel:+15086276200">508-627-6200</a></div></article><article class="place"><h3>Katama General Store</h3><p>Prepared food, picnic provisions, drinks, and beach-day essentials on the way to South Beach.</p><div class="place-meta"><span>170 Katama Rd, Edgartown</span><a href="tel:+15086275071">508-627-5071</a></div></article></div></div></section>
 <section class="section shell" id="provisions"><div class="section-heading"><h2>Provisions</h2></div><div class="directory-grid two-col"><article class="place"><h3>Rosewater Spirits</h3><p>Our pick for wine, plus a thoughtful selection of spirits, beer, cocktail ingredients, and entertaining provisions.</p><div class="place-meta"><span>65 Main St, Edgartown</span><a href="tel:+17743101203">774-310-1203</a></div></article><article class="place"><h3>Big Ed's General Store</h3><p>A convenient stop across from Stop &amp; Shop for liquor, beer, mixers, snacks, and other last-minute essentials.</p><div class="place-meta"><span>Upper Main St, Edgartown · across from Stop &amp; Shop</span></div></article></div></section>
 <section class="section alt" id="dining"><div class="shell"><div class="section-heading"><h2>Dining</h2></div><div class="directory-grid"><article class="place"><h3>Bettini</h3><p>Polished waterfront dining at Harbor View Hotel with a refined menu and a classic Edgartown setting.</p><div class="place-meta"><span>131 North Water St, Edgartown</span><a href="tel:+15086273767">508-627-3767</a></div><div class="place-links"><a href="https://harborviewhotel.com/dining/bettini-restaurant/" target="_blank" rel="noopener">Website</a></div></article><article class="place"><h3>l'étoile</h3><p>An intimate Edgartown favorite for a special dinner in a historic house just beyond the center of town.</p><div class="place-meta"><span>22 North Water St, Edgartown</span><a href="tel:+15086275187">508-627-5187</a></div><div class="place-links"><a href="https://www.letoile.net/" target="_blank" rel="noopener">Website</a></div></article><article class="place"><h3>Alchemy</h3><p>A longstanding Main Street favorite for dinner and cocktails with a lively but polished atmosphere.</p><div class="place-meta"><span>71 Main St, Edgartown</span><a href="tel:+15086279999">508-627-9999</a></div><div class="place-links"><a href="https://www.alchemyedgartown.com/" target="_blank" rel="noopener">Website</a></div></article><article class="place"><h3>Atlantic Fish &amp; Chop House</h3><p>Waterfront dining at the foot of Main Street with harbor views and a livelier evening scene.</p><div class="place-meta"><span>2 Main St, Edgartown</span><a href="tel:+15086277001">508-627-7001</a></div><div class="place-links"><a href="https://www.atlanticmv.com/" target="_blank" rel="noopener">Website</a></div></article></div></div></section>
 <section class="section shell" id="beaches"><div class="section-heading"><h2>Beaches</h2></div><div class="directory-grid"><article class="place"><h3>South Beach</h3><p>Wide Atlantic shoreline and rolling surf. Best for a full beach setup and a classic Katama beach day.</p><div class="place-meta"><span>Katama / Herring Creek Rd, Edgartown</span></div></article><article class="place"><h3>Bend-in-the-Road Beach</h3><p>Calmer water along Joseph Sylvia State Beach with convenient bike-trail access and an easier setup for families.</p><div class="place-meta"><span>Beach Rd, Edgartown</span></div></article><article class="place"><h3>Lighthouse Beach</h3><p>A scenic harbor beach within walking distance of town. Ideal for a shorter outing, picnic, or sunset stop.</p><div class="place-meta"><span>121 North Water St, Edgartown</span></div></article></div></section>
@@ -217,10 +236,7 @@
 <section class="section shell"><div class="section-heading"><h2>Family, Baby &amp; Pet Amenities</h2></div><div class="prose narrow"><p>We're delighted to welcome guests of all ages—including our littlest visitors and four-legged family members. To help make your stay more comfortable, we've provided a selection of baby, children's, and pet items. Many are the same products our own families use and enjoy, while others have been thoughtfully added to accommodate guests.</p><p>Because every child and pet has unique needs, we ask that parents and pet owners carefully inspect all equipment before use to ensure it is appropriate, properly assembled, and in good working condition. Use of these amenities is entirely at your discretion and responsibility.</p></div></section>
 
 <section class="section shell" id="medical">
-  <div class="section-heading help-heading">
-    <h2>Medical Services</h2>
-    
-  </div>
+  <div class="section-heading help-heading"><h2>Medical Services</h2></div>
 
   <div class="help-grid medical-grid">
     <article class="help-panel">
