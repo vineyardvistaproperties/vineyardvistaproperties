@@ -33,7 +33,7 @@ export default function handler(req, res) {
     if (!secret) return res.status(500).send('Authentication is not configured.');
 
     const route = String(req.query?.route || 'home');
-    const managementRoutes = new Set(['management', 'rentals', 'house-standards', 'property']);
+    const managementRoutes = new Set(['management','pitch']);
     if (!pages[route]) return res.status(404).send('Not found');
 
     const cookies = cookieMap(req);
@@ -44,6 +44,7 @@ export default function handler(req, res) {
       home: '/',
       guide: '/guide',
       management: '/management',
+      pitch: '/pitch',
       rentals: '/management/rentals',
       'house-standards': '/management/house-standards',
       property: '/management/property'
