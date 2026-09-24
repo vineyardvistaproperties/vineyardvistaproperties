@@ -3,8 +3,9 @@
   const MANAGEMENT_PASSWORD = 'ABCgang';
   const path = (location.pathname || '').toLowerCase();
   const file = path.split('/').pop();
-  const managementFiles = new Set(['management.html','rentals.html','house-standards.html','property-management.html']);
+  const managementFiles = new Set(['management.html','rentals.html','house-standards.html','property-management.html','pitch.html']);
   const isManagement = path.startsWith('/management') || managementFiles.has(file);
+  const managementHasInlinePreviewGate = file === 'management.html';
 
   const SITE_KEY = 'vvp_site_preview_auth';
   const MGMT_KEY = 'vvp_management_preview_auth';
@@ -82,7 +83,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    if(stage()) makeGate();
+    if(stage() && !(isManagement && managementHasInlinePreviewGate)) makeGate();
 
     document.querySelectorAll('a[href*="/api/logout"]').forEach(a => {
       a.addEventListener('click', () => {

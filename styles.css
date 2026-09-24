@@ -52,3 +52,51 @@ html.auth-locked{overflow:hidden}
   .amenities-list>div:nth-child(even){padding-left:0;border-left:0}
   .amenities-list>div:nth-child(odd){padding-right:0}
 }
+
+
+/* About This House refinements */
+#coffee .section-heading,
+#groceries .section-heading,
+#provisions .section-heading,
+#dining .section-heading,
+#beaches .section-heading,
+#transportation .section-heading{
+  margin-bottom:45px;
+}
+.help-heading{align-items:start}
+.help-heading p{max-width:560px;margin:8px 0 0;color:var(--muted)}
+.help-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;border-top:1px solid var(--rule);padding-top:34px}
+.help-panel h3{font-family:'Cormorant Garamond',serif;color:var(--navy);font-size:2rem;font-weight:500;margin:.3em 0 .25em}
+.help-intro{max-width:520px;color:var(--muted);font-size:.9rem}
+.help-list{margin:24px 0 0}
+.help-list>div{display:grid;grid-template-columns:minmax(130px,.65fr) 1.35fr;gap:22px;padding:14px 0;border-top:1px solid var(--rule)}
+.help-list dt{font-weight:500;color:var(--navy)}
+.help-list dd{margin:0;color:var(--muted)}
+.help-contact{display:flex;align-items:center;gap:22px;margin-top:40px;padding-top:24px;border-top:1px solid var(--sand)}
+.help-contact .mini-label{margin-right:auto}
+.help-contact strong{font-family:'Cormorant Garamond',serif;color:var(--navy);font-size:1.35rem}
+.help-contact a{text-decoration:none;font-weight:500}
+@media(max-width:900px){
+  .help-grid{grid-template-columns:1fr;gap:42px}
+  .help-contact{align-items:flex-start;flex-direction:column;gap:8px}
+  .help-contact .mini-label{margin-right:0}
+}
+
+
+/* Condensed About This House opening */
+.guide-house{padding-top:72px}
+.guide-house-heading{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:end;margin-bottom:38px}
+.guide-house-heading h1{font-family:'Cormorant Garamond',serif;font-weight:500;color:var(--navy);font-size:clamp(2.8rem,5vw,4.4rem);line-height:1;margin:.05em 0 0}
+.guide-house-intro{max-width:620px;margin:0;color:var(--muted);font-size:1rem}
+@media(max-width:900px){
+  .guide-house{padding-top:52px}
+  .guide-house-heading{grid-template-columns:1fr;gap:16px}
+}
+
+
+.service-note{font-size:.74rem;color:var(--muted)}
+.service-recommendations{margin-top:28px;padding-top:22px;border-top:1px solid var(--rule);font-size:.9rem;color:var(--ink)}
+
+
+.help-grid-single{grid-template-columns:1fr}
+.help-grid-single .help-panel{max-width:860px}

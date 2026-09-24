@@ -17,16 +17,8 @@
       "destination": "/api/protected?route=management"
     },
     {
-      "source": "/management/rentals",
-      "destination": "/api/protected?route=rentals"
-    },
-    {
-      "source": "/management/house-standards",
-      "destination": "/api/protected?route=house-standards"
-    },
-    {
-      "source": "/management/property",
-      "destination": "/api/protected?route=property"
+      "source": "/pitch",
+      "destination": "/api/protected?route=pitch"
     }
   ],
   "headers": [
@@ -57,18 +49,8 @@
       "permanent": false
     },
     {
-      "source": "/rentals.html",
-      "destination": "/management/rentals",
-      "permanent": false
-    },
-    {
-      "source": "/house-standards.html",
-      "destination": "/management/house-standards",
-      "permanent": false
-    },
-    {
-      "source": "/property-management.html",
-      "destination": "/management/property",
+      "source": "/pitch.html",
+      "destination": "/pitch",
       "permanent": false
     }
   ]

@@ -44,3 +44,14 @@ Required Vercel environment variables:
 - `SITE_PASSWORD=MVY2027`
 - `MANAGEMENT_PASSWORD=ABCgang`
 - `AUTH_SECRET=<long random secret>`
+
+
+## Private Partner Pitch
+- `pitch.html` is the private partner pitch page.
+- Production route: `/pitch`.
+- It requires both site access and the separate Management password.
+- It is intentionally not linked from the property-manager Management portal.
+
+
+## Approved Amazon Items
+The House Standards catalog includes 21 items from the supplied Amazon list for which a direct Amazon product page was verified. Five source items were left out pending a verified direct Amazon product URL.
