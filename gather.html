@@ -127,59 +127,55 @@
     .details-strip strong{display:block;font:600 1.35rem "Cormorant Garamond",serif;color:var(--navy);margin-top:8px}
     .details-strip span:last-child{display:block;color:#6B747D;font-size:.79rem;margin-top:5px}
 
-    .event-booking{padding:102px 0 112px;border-top:1px solid var(--line);background:rgba(255,255,255,.5)}
-    .booking-heading{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:end;margin-bottom:48px}
-    .booking-heading h2{font:500 clamp(3.2rem,5.8vw,5.2rem)/.92 "Cormorant Garamond",Georgia,serif;color:var(--navy);letter-spacing:-.03em;margin:14px 0 0}
-    .booking-heading p:last-child{margin:0;color:#5e6872;max-width:650px}
-    .calendar-shell{background:var(--ivory);border:1px solid var(--line);padding:30px}
-    .calendar-toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:22px}
-    .calendar-toolbar button{width:42px;height:42px;border:1px solid var(--line);background:transparent;color:var(--navy);font-size:1.1rem;cursor:pointer}
+    .event-booking{padding:72px 0;background:var(--soft);border-top:0}
+    .booking-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:64px;align-items:start}
+    .booking-layout h2,.request-layout h2{font:500 clamp(3rem,5vw,4.5rem)/1 "Cormorant Garamond",Georgia,serif;color:var(--navy);letter-spacing:-.02em;margin:8px 0 18px}
+    .booking-copy{color:#4D5660;line-height:1.8;margin:0}
+    .calendar-shell{background:#fff;border:1px solid var(--line);padding:28px}
+    .calendar-toolbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:20px}
+    .calendar-toolbar button{width:34px;height:34px;border:1px solid var(--line);background:#FCFBF8;color:var(--navy);font-size:1rem;cursor:pointer}
     .calendar-toolbar button:hover{border-color:var(--sand)}
-    .calendar-range-label{font:600 .72rem "Libre Franklin",sans-serif;text-transform:uppercase;letter-spacing:.14em;color:var(--navy)}
-    .calendar-months{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-    .calendar-month{min-width:0}
-    .calendar-month h3{font:600 1.62rem "Cormorant Garamond",Georgia,serif;color:var(--navy);margin:0 0 14px}
-    .calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-    .calendar-grid .dow,.calendar-day{min-height:44px;display:grid;place-items:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .calendar-grid .dow{min-height:34px;font-size:.57rem;text-transform:uppercase;letter-spacing:.1em;color:#7a8289;font-weight:600;background:#f1eee8}
-    .calendar-day{font-size:.78rem;color:var(--navy);background:#fff;position:relative}
-    button.calendar-day{font-family:inherit;border-top:0;border-left:0;cursor:pointer;padding:0}
-    button.calendar-day:hover{box-shadow:inset 0 0 0 1px var(--sand)}
-    .calendar-day.outside{background:#f3f0ea;color:#b1b1ad;cursor:default}
-    .calendar-day.past{background:#f3f0ea;color:#b1b1ad;cursor:not-allowed}
-    .calendar-day.selected{background:var(--navy);color:#fff;box-shadow:inset 0 0 0 2px var(--sand)}
-    .calendar-legend{display:flex;gap:24px;flex-wrap:wrap;margin-top:20px;color:#6d747b;font-size:.72rem}
+    .calendar-range-label{font:500 .65rem "Libre Franklin",sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--navy)}
+    .calendar-months{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .calendar-month{border:1px solid var(--line);background:#FCFBF8;padding:14px;min-width:0}
+    .calendar-month h3{margin:0 0 10px;font:600 1.25rem "Cormorant Garamond",Georgia,serif;color:var(--navy)}
+    .calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+    .calendar-grid .dow{display:flex;align-items:center;justify-content:center;min-height:24px;border:0;background:transparent;text-align:center;font-size:.54rem;text-transform:uppercase;letter-spacing:0;color:var(--muted);font-weight:400}
+    .calendar-day{display:flex;align-items:center;justify-content:center;aspect-ratio:1;min-height:0;border:1px solid #E3DDD3;background:#F7F3ED;color:#4D5660;font-size:.68rem;position:relative}
+    button.calendar-day{font-family:inherit;cursor:pointer;padding:0}
+    button.calendar-day:hover{border-color:var(--sand)}
+    .calendar-day.outside,.calendar-day.past{border-color:transparent;background:transparent;color:#b1b1ad;cursor:default}
+    .calendar-day.selected{border-color:var(--sand);background:#EDE2D4;color:var(--navy);font-weight:600;box-shadow:none}
+    .calendar-legend{display:flex;gap:24px;flex-wrap:wrap;margin-top:16px;color:#66717B;font-size:.72rem}
     .calendar-legend span{display:flex;align-items:center;gap:8px}
-    .legend-swatch{width:14px;height:14px;border:1px solid var(--line);background:#fff;display:inline-block}
-    .legend-swatch.selected{background:var(--navy);border-color:var(--navy)}
-    .calendar-note{margin:18px 0 0;color:#69737d;font-size:.75rem;max-width:820px}
+    .legend-swatch{width:14px;height:14px;border:1px solid #E3DDD3;background:#F7F3ED;display:inline-block}
+    .legend-swatch.selected{background:#EDE2D4;border-color:var(--sand)}
+    .calendar-note{margin:16px 0 0;color:#66717B;font-size:.74rem;line-height:1.55}
 
-    .inquiry{padding:108px 0 114px;background:var(--navy);color:white;scroll-margin-top:104px}
-    .inquiry .kicker{color:var(--sand)}
-    .inquiry-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:72px;align-items:start}
-    .inquiry h2{font:500 clamp(3.7rem,6.5vw,6rem)/.9 "Cormorant Garamond",serif;margin:16px 0 24px;letter-spacing:-.035em;max-width:780px}
-    .inquiry-copy>p:last-child{color:#DCE2E7;max-width:570px;margin:0}
-    .request-form{background:var(--ivory);color:var(--ink);padding:34px;border-top:3px solid var(--sand)}
-    .request-form fieldset{border:0;padding:0;margin:0 0 28px}
-    .request-form legend{font:600 1.55rem "Cormorant Garamond",Georgia,serif;color:var(--navy);padding:0;margin:0 0 18px}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .inquiry{padding:72px 0;background:var(--ivory);color:var(--ink);scroll-margin-top:104px}
+    .inquiry .kicker{color:var(--sage)}
+    .request-layout{display:grid;grid-template-columns:.78fr 1.22fr;gap:68px;align-items:start}
+    .request-copy{color:#4D5660;line-height:1.8;margin:0 0 14px}
+    .request-form{background:#fff;border:1px solid var(--line);padding:30px;color:var(--ink)}
+    .request-form fieldset{border:0;padding:0;margin:0 0 24px}
+    .request-form fieldset.form-section+fieldset.form-section{padding-top:24px;border-top:1px solid var(--line)}
+    .request-form legend{padding:0;margin:0 0 16px;font:600 1.45rem "Cormorant Garamond",Georgia,serif;color:var(--navy)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .form-grid .full{grid-column:1/-1}
-    .form-grid .compact-full{grid-column:1/-1;max-width:calc(50% - 9px)}
-    .request-form label{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.09em;font-weight:600;color:#59636d}
-    .request-form input,.request-form select,.request-form textarea{width:100%;margin-top:7px;border:1px solid #cfc7bb;background:#fff;color:var(--ink);padding:13px 14px;font:400 .9rem "Libre Franklin",Arial,sans-serif;border-radius:0;outline:none}
-    .request-form input:focus,.request-form select:focus,.request-form textarea:focus{border-color:var(--sand);box-shadow:0 0 0 1px var(--sand)}
+    .form-grid .compact-full{grid-column:1/-1;max-width:calc(50% - 8px)}
+    .request-form label{display:block;margin:0 0 16px;color:var(--navy);font-size:.67rem;font-weight:600;text-transform:uppercase;letter-spacing:.09em}
+    .request-form input,.request-form select,.request-form textarea{display:block;width:100%;margin-top:7px;padding:12px 13px;border:1px solid #CBC3B8;border-radius:0;background:#FCFBF8;color:var(--ink);font:300 .91rem/1.45 "Libre Franklin",Arial,sans-serif}
+    .request-form input:focus,.request-form select:focus,.request-form textarea:focus{outline:2px solid rgba(184,156,122,.28);outline-offset:1px;border-color:var(--sand);box-shadow:none}
     .request-form textarea{resize:vertical;min-height:128px}
-    .form-note{margin:8px 0 0;color:#777f87;font-size:.69rem;text-transform:none;letter-spacing:0;font-weight:300}
-    .selected-date-card{border:1px solid var(--line);padding:16px 18px;margin-bottom:26px;background:#fff}
+    .selected-date-card{border:1px solid var(--line);padding:15px 16px;margin-bottom:24px;background:#FCFBF8}
     .selected-date-card span{display:block;font-size:.58rem;text-transform:uppercase;letter-spacing:.13em;color:var(--sage);font-weight:600;margin-bottom:5px}
-    .selected-date-card strong{font:600 1.45rem "Cormorant Garamond",Georgia,serif;color:var(--navy)}
-    .checkbox-row{display:flex!important;gap:10px;align-items:flex-start;text-transform:none!important;letter-spacing:0!important;font-size:.78rem!important;font-weight:300!important;color:#5d6670!important}
-    .checkbox-row input{width:auto;margin:4px 0 0;flex:0 0 auto}
-    .request-form .event-button{display:inline-block;text-decoration:none;color:white;background:var(--navy);padding:15px 20px;text-transform:uppercase;letter-spacing:.12em;font-size:.66rem;font-weight:600;border:1px solid var(--navy);cursor:pointer}
-    .request-form .event-button:hover{background:transparent;color:var(--navy)}
-    .form-status{min-height:1.5em;margin:14px 0 0!important;color:#58626c!important;font-size:.75rem!important}
-    .rate-note{margin-top:18px!important;font-size:.72rem!important;color:#AEB8C1!important}
-
+    .selected-date-card strong{font:600 1.3rem "Cormorant Garamond",Georgia,serif;color:var(--navy)}
+    .checkbox-row{display:flex!important;align-items:flex-start;gap:10px;margin:3px 0 18px!important;text-transform:none!important;letter-spacing:0!important;font-size:.86rem!important;font-weight:300!important;color:#4E5964!important}
+    .checkbox-row input{width:auto!important;margin:4px 0 0!important;flex:0 0 auto}
+    .checkbox-row span{line-height:1.6}
+    .request-form .event-button{display:block;width:100%;min-height:51px;border:1px solid var(--navy);background:var(--navy);color:#fff;text-transform:uppercase;letter-spacing:.13em;font-size:.68rem;font-weight:600;cursor:pointer;text-decoration:none}
+    .request-form .event-button:hover{background:#173654;color:#fff}
+    .form-status{min-height:1.3em;margin:12px 0 0;color:var(--muted);font-size:.8rem}
     footer{background:#081A30;color:white;padding:38px 0}
     .footer-inner{display:flex;justify-content:space-between;gap:30px;align-items:center}
     .footer-brand{font:600 1.45rem "Cormorant Garamond",serif}
@@ -187,18 +183,24 @@
     .footer-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
     .footer-inner a{color:white;text-decoration:none;text-transform:uppercase;letter-spacing:.11em;font-size:.62rem;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:3px}
 
+    @media(max-width:980px){
+      .booking-layout,.request-layout{grid-template-columns:1fr;gap:42px}.calendar-months{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      .event-booking,.inquiry{padding:56px 0}.calendar-shell{padding:22px 18px}.request-form{padding:22px 18px}.form-grid{grid-template-columns:1fr;gap:0}.form-grid .full,.form-grid .compact-full{grid-column:auto;max-width:none}
+    }
     @media(max-width:930px){
       .hero{grid-template-columns:1fr;gap:30px;min-height:auto;padding:72px 0 82px}.hero-mark{display:none}
       .occasion-grid{grid-template-columns:1fr 1fr}.editorial-split{grid-template-columns:1fr;gap:35px}
       .experience-grid{grid-template-columns:1fr}.experience-item{border-right:0;border-bottom:1px solid var(--line);padding:28px 0;margin:0}.experience-item:last-child{border-bottom:0}
-      .planning-list{grid-template-columns:1fr;gap:34px}.details-strip{grid-template-columns:1fr 1fr}.booking-heading{grid-template-columns:1fr;gap:22px}.calendar-months{grid-template-columns:1fr}.inquiry-grid{grid-template-columns:1fr;gap:42px}
+      .planning-list{grid-template-columns:1fr;gap:34px}.details-strip{grid-template-columns:1fr 1fr}
       .editorial-feature{grid-template-columns:1fr;gap:34px}.editorial-feature-copy{grid-template-columns:1fr;gap:24px}.inline-figure{justify-self:start;width:min(100%,420px)}
       .occasion-composition{grid-template-columns:1fr}.occasion-photo-stack{grid-template-columns:1fr 1fr}.occasion-photo-stack .photo-frame,.occasion-photo-stack .photo-frame:last-child{height:220px}
       .experience-inline{grid-template-columns:1fr 320px;gap:28px}.planning-editorial{grid-template-columns:1fr 300px;gap:34px}
     }
     @media(max-width:760px){
       .shell{width:min(var(--max),calc(100% - 30px))}.brand-row{min-height:74px}.menu-toggle{display:block}.site-nav{display:none;position:absolute;top:74px;left:0;right:0;background:var(--ivory);padding:20px 15px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:16px}.site-nav.open{display:flex}
-      .hero h1{font-size:clamp(3.5rem,17vw,5.4rem)}.section{padding:70px 0}.section-heading{align-items:flex-start;flex-direction:column;gap:16px}.occasion-grid,.details-strip{grid-template-columns:1fr}.event-booking{padding:72px 0 80px}.calendar-shell{padding:18px}.calendar-months{grid-template-columns:1fr}.calendar-grid .dow,.calendar-day{min-height:40px}.inquiry{padding:82px 0}.request-form{padding:24px 18px}.form-grid{grid-template-columns:1fr}.form-grid .full,.form-grid .compact-full{grid-column:auto;max-width:none}.footer-inner{align-items:flex-start;flex-direction:column}
+      .hero h1{font-size:clamp(3.5rem,17vw,5.4rem)}.section{padding:70px 0}.section-heading{align-items:flex-start;flex-direction:column;gap:16px}.occasion-grid,.details-strip{grid-template-columns:1fr}.footer-inner{align-items:flex-start;flex-direction:column}
       .editorial-feature{grid-template-columns:1fr}.editorial-feature-copy{grid-template-columns:1fr;gap:22px}.inline-figure{width:min(88%,340px);justify-self:center}.inline-figure .photo-frame{height:220px}
       .occasion-composition{grid-template-columns:1fr}.occasion-photo-stack{grid-template-columns:1fr 1fr;gap:12px}.occasion-photo-stack .photo-frame,.occasion-photo-stack .photo-frame:last-child{height:170px}
       .experience-inline{grid-template-columns:1fr;gap:24px}.experience-inline .photo-frame{width:min(88%,330px);height:210px}.planning-editorial{grid-template-columns:1fr;gap:28px}.planning-visuals{grid-template-columns:1fr 1fr;gap:12px}.planning-visuals .photo-frame,.planning-visuals .photo-frame:last-child{height:170px}
@@ -316,13 +318,11 @@
 </div>
 </section>
 <section class="event-booking" id="event-availability">
-  <div class="shell">
-    <div class="booking-heading">
-      <div>
-        <p class="kicker">Event Availability</p>
-        <h2>Choose a date to begin.</h2>
-      </div>
-      <p>Private gatherings are considered on select off-season and shoulder-season dates. Choose a preferred date below and we will review it against the property calendar before confirming any event.</p>
+  <div class="shell booking-layout">
+    <div>
+      <p class="kicker">Event Availability</p>
+      <h2>Choose a date to begin.</h2>
+      <p class="booking-copy">Private gatherings are considered on select off-season and shoulder-season dates. Choose a preferred date and we will review it against the property calendar before confirming any event.</p>
     </div>
     <div class="calendar-shell">
       <div class="calendar-toolbar">
@@ -340,19 +340,19 @@
   </div>
 </section>
 <section class="inquiry" id="inquiry">
-  <div class="shell inquiry-grid">
-    <div class="inquiry-copy">
+  <div class="shell request-layout">
+    <div>
       <p class="kicker">Request a Private Gathering</p>
       <h2>Tell us what you're celebrating.</h2>
-      <p>Use the same simple request process as a Vineyard Vista stay: share your preferred date and details, and we will respond after reviewing the property calendar and the fit of the gathering.</p>
-      <p class="rate-note">Submitting this form is a request only. It does not create a reservation or hold a date.</p>
+      <p class="request-copy">Share your preferred date and details, and we will respond after reviewing the property calendar and the fit of the gathering.</p>
+      <p class="request-copy">Submitting this form is a request only. It does not create a reservation or hold a date.</p>
     </div>
     <form class="request-form" id="event-request-form" novalidate>
       <div class="selected-date-card" aria-live="polite">
         <span>Selected event date</span>
         <strong id="selected-date-display">Choose a date from the calendar</strong>
       </div>
-      <fieldset>
+      <fieldset class="form-section">
         <legend>Your details</legend>
         <div class="form-grid">
           <label>First name *<input type="text" name="first_name" autocomplete="given-name" required></label>
@@ -361,7 +361,7 @@
           <label>Phone *<input type="tel" name="phone" autocomplete="tel" required></label>
         </div>
       </fieldset>
-      <fieldset>
+      <fieldset class="form-section">
         <legend>Gathering details</legend>
         <div class="form-grid">
           <label>Preferred event date *<input id="event-date" type="date" name="event_date" min="2026-10-01" max="2027-05-31" required></label>
@@ -400,10 +400,8 @@
         </div>
       </fieldset>
       <label class="checkbox-row"><input type="checkbox" name="acknowledgement" required><span>I understand that this is an inquiry only and that the date, rate, guest count, and event terms are subject to review and written approval.</span></label>
-      <div style="margin-top:24px">
-        <button class="event-button" type="submit">Submit Event Request</button>
-        <p class="form-status" id="event-form-status" role="status" aria-live="polite"></p>
-      </div>
+      <button class="event-button" type="submit">Submit Event Request</button>
+      <p class="form-status" id="event-form-status" role="status" aria-live="polite"></p>
     </form>
   </div>
 </section>
