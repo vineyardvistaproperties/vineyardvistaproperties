@@ -176,12 +176,12 @@
     .request-form .event-button{display:block;width:100%;min-height:51px;border:1px solid var(--navy);background:var(--navy);color:#fff;text-transform:uppercase;letter-spacing:.13em;font-size:.68rem;font-weight:600;cursor:pointer;text-decoration:none}
     .request-form .event-button:hover{background:#173654;color:#fff}
     .form-status{min-height:1.3em;margin:12px 0 0;color:var(--muted);font-size:.8rem}
-    footer{background:#081A30;color:white;padding:38px 0}
-    .footer-inner{display:flex;justify-content:space-between;gap:30px;align-items:center}
-    .footer-brand{font:600 1.45rem "Cormorant Garamond",serif}
-    .footer-tagline{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#BBC4CC;margin-top:4px}
-    .footer-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-    .footer-inner a{color:white;text-decoration:none;text-transform:uppercase;letter-spacing:.11em;font-size:.62rem;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:3px}
+    footer{background:#081A30;color:#fff;padding:32px 0}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:18px 28px;flex-wrap:wrap}
+    .footer-brand{font-family:"Cormorant Garamond",serif;font-size:1.7rem;font-weight:600}
+    .footer-tagline{margin-top:3px;color:#D8C19F;text-transform:uppercase;letter-spacing:.13em;font-size:.64rem}
+    .footer-management,.footer-legal,.footer-links{display:flex;align-items:center;gap:10px 22px;flex-wrap:wrap}
+    .footer-management a,.footer-legal a,.footer-links a{color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.11em;font-size:.64rem;border-bottom:1px solid rgba(255,255,255,.42);padding-bottom:3px;white-space:nowrap}
 
     @media(max-width:980px){
       .booking-layout,.request-layout{grid-template-columns:1fr;gap:42px}.calendar-months{grid-template-columns:1fr}
@@ -406,20 +406,8 @@
   </div>
 </section>
 </main>
-<footer>
-    <div class="shell footer-inner">
-      <div>
-        <div class="footer-brand">Vineyard Vista Properties</div>
-        <div class="footer-tagline">Exceptional Homes. Timeless Memories.</div>
-      </div>
-      <div class="footer-links">
-        <a href="stay.html">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
-        <a href="#top">Back to top</a>
-      </div>
-    </div>
-  </footer>
+<footer><div class="shell footer-inner"><div><div class="footer-brand">Vineyard Vista Properties</div><div class="footer-tagline">Exceptional Homes. Timeless Memories.</div></div><div class="footer-management"><a href="management.html">Management</a><a href="pitch.html">Investors</a></div><div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div><div class="footer-links"><a href="/api/logout?area=site">Sign out</a></div></div></footer>
+<script src="auth-client.js"></script>
 <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.site-nav');
