@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="management-preview-locked">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -30,17 +30,19 @@ footer{background:var(--navy);color:#fff;padding:28px 0}.footer{display:flex;jus
 </style>
 
 <style id="management-preview-gate-styles">
+  [hidden]{display:none!important}
   .management-preview-gate{position:fixed;inset:0;z-index:10000;background:#0D2340;display:grid;place-items:center;padding:24px}
   .management-preview-card{width:min(500px,100%);background:#F7F5F0;padding:40px;border-top:4px solid #B89C7A;box-shadow:0 20px 60px rgba(0,0,0,.18)}
   .management-preview-card .gate-kicker{text-transform:uppercase;letter-spacing:.16em;font:600 .7rem "Libre Franklin",Arial,sans-serif;color:#B89C7A}
   .management-preview-card h1{font:500 2.7rem/1 "Cormorant Garamond",Georgia,serif;color:#0D2340;margin:.45rem 0 .9rem}
   .management-preview-card p{color:#66717f;font-size:.92rem;margin:0 0 1.3rem}
   .management-preview-card label.password-label{display:block;text-transform:uppercase;letter-spacing:.09em;font-size:.72rem;font-weight:600;color:#263342;margin-bottom:.5rem}
-  .management-preview-card input[type="password"],
-  .management-preview-card input[type="text"]{width:100%;padding:13px 14px;border:1px solid #c9c1b6;background:#fff;font:inherit}
-  .management-preview-card .show-row{display:flex;align-items:center;gap:8px;margin:10px 0 0;font-size:.82rem;color:#66717f;cursor:pointer}
+  .management-preview-card input[type="password"],.management-preview-card input[type="text"]{width:100%;padding:13px 14px;border:1px solid #c9c1b6;background:#fff;font:inherit}
+  .management-preview-card input.invalid{border-color:#9B3A36;box-shadow:0 0 0 1px #9B3A36}
+  .management-preview-card .show-row{display:flex;align-items:center;gap:8px;margin:10px 0 0;font-size:.82rem;color:#66717f;cursor:pointer;user-select:none}
+  .management-preview-card .show-row input{width:16px;height:16px;accent-color:#0D2340}
   .management-preview-card button{width:100%;margin-top:18px;padding:13px 16px;border:0;background:#0D2340;color:#fff;font:600 .75rem "Libre Franklin",Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;cursor:pointer}
-  .management-preview-error{min-height:1.4em;margin-top:9px;color:#8a3131;font-size:.82rem}
+  .management-preview-error{min-height:1.5em;margin-top:10px;color:#9B3A36;font-size:.84rem;font-weight:500}
   html.management-preview-locked body > *:not(#management-preview-gate){visibility:hidden}
   html.management-preview-locked #management-preview-gate{visibility:visible}
 </style>
@@ -62,51 +64,66 @@ footer{background:var(--navy);color:#fff;padding:28px 0}.footer{display:flex;jus
     </form>
   </div>
 </div>
-<script>
+<script id="management-preview-gate-script">
 (function(){
-  const KEY = 'vvp_policies_preview_auth';
+  const KEY = 'vvp_management_preview_auth';
   const PASSWORD = 'ABCgang';
-  const cleanServerRoute = location.pathname === '/policies' || location.pathname.startsWith('/api/');
-  if (cleanServerRoute) return;
 
-  let authenticated = false;
-  try { authenticated = sessionStorage.getItem(KEY) === '1'; } catch(e) {}
-  if (authenticated) return;
-
-  document.documentElement.classList.add('management-preview-locked');
+  function unlock(){
+    const gate = document.getElementById('management-preview-gate');
+    if (gate) gate.remove();
+    document.documentElement.classList.remove('management-preview-locked');
+  }
 
   function init(){
+    let authenticated = false;
+    try { authenticated = sessionStorage.getItem(KEY) === '1'; } catch(e) {}
+    if (authenticated){ unlock(); return; }
+
+    document.documentElement.classList.add('management-preview-locked');
     const gate = document.getElementById('management-preview-gate');
     const form = document.getElementById('management-preview-form');
     const input = document.getElementById('management-preview-password');
     const show = document.getElementById('management-preview-show');
     const error = document.getElementById('management-preview-error');
+    if (!gate || !form || !input || !show || !error) return;
 
     gate.hidden = false;
+
+    function clearError(){
+      error.textContent = '';
+      input.classList.remove('invalid');
+      input.removeAttribute('aria-invalid');
+    }
+
     show.addEventListener('change', function(){
       input.type = show.checked ? 'text' : 'password';
       input.focus();
     });
+
+    input.addEventListener('input', clearError);
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
+      clearError();
       if (input.value.trim() !== PASSWORD){
-        error.textContent = 'Incorrect password.';
+        error.textContent = 'Incorrect Management password. Please try again.';
+        input.classList.add('invalid');
+        input.setAttribute('aria-invalid','true');
         input.focus();
         input.select();
-        return;
+        return false;
       }
       try { sessionStorage.setItem(KEY, '1'); } catch(e) {}
-      gate.remove();
-      document.documentElement.classList.remove('management-preview-locked');
+      unlock();
+      return false;
     });
+
     input.focus();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init, {once:true});
-  } else {
-    init();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once:true});
+  else init();
 })();
 </script>
 
