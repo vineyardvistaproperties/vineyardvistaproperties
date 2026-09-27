@@ -204,7 +204,100 @@
 <body>
 <div id="management-preview-gate" class="management-preview-gate" hidden><div class="management-preview-card"><div class="gate-kicker">Management</div><h1>Vineyard Vista Management</h1><p>Enter the Management password to continue.</p><form id="management-preview-form"><label class="password-label" for="management-preview-password">Password</label><input id="management-preview-password" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required><label class="show-row"><input id="management-preview-show" type="checkbox"><span>Show password</span></label><button type="submit">Continue</button><div id="management-preview-error" class="management-preview-error" aria-live="polite"></div></form></div></div>
 <script id="management-preview-gate-script">
-(function(){const KEY='vvp_management_preview_auth'; /* Shared Management auth across Management and Policies tabs */const PASSWORD='ABCgang';function unlock(){const gate=document.getElementById('management-preview-gate');if(gate)gate.remove();document.documentElement.classList.remove('management-preview-locked')}function init(){let authenticated=false;try{authenticated=localStorage.getItem(KEY)==='1'}catch(e){}if(authenticated){unlock();return}document.documentElement.classList.add('management-preview-locked');const gate=document.getElementById('management-preview-gate'),form=document.getElementById('management-preview-form'),input=document.getElementById('management-preview-password'),show=document.getElementById('management-preview-show'),error=document.getElementById('management-preview-error');if(!gate||!form||!input||!show||!error)return;gate.hidden=false;function clearError(){error.textContent='';input.classList.remove('invalid');input.removeAttribute('aria-invalid')}show.addEventListener('change',function(){input.type=show.checked?'text':'password';input.focus()});input.addEventListener('input',clearError);form.addEventListener('submit',function(e){e.preventDefault();clearError();if(input.value.trim()!==PASSWORD){error.textContent='Incorrect Management password. Please try again.';input.classList.add('invalid');input.setAttribute('aria-invalid','true');input.focus();input.select();return false}try{localStorage.setItem(KEY,'1')}catch(e){}unlock();return false});input.focus()}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init()})();
+(function(){
+  const KEY = 'vvp_management_preview_auth';
+  const PASSWORD = 'ABCgang';
+  const MAX_AGE_MS = 12 * 60 * 60 * 1000;
+
+  function readAuth(){
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (!raw) return false;
+      if (raw === '1') return true; // compatibility with prior shared-auth build
+      const state = JSON.parse(raw);
+      return !!(state && state.authenticated === true && Date.now() - Number(state.at || 0) < MAX_AGE_MS);
+    } catch(e) { return false; }
+  }
+
+  function writeAuth(){
+    try { localStorage.setItem(KEY, JSON.stringify({authenticated:true,at:Date.now()})); } catch(e) {}
+  }
+
+  function clearAuth(){
+    try { localStorage.removeItem(KEY); } catch(e) {}
+  }
+
+  function unlock(){
+    const gate = document.getElementById('management-preview-gate');
+    if (gate) gate.hidden = true;
+    document.documentElement.classList.remove('management-preview-locked');
+  }
+
+  function lock(){
+    document.documentElement.classList.add('management-preview-locked');
+    const gate = document.getElementById('management-preview-gate');
+    if (gate) gate.hidden = false;
+  }
+
+  function init(){
+    if (readAuth()){ unlock(); return; }
+    clearAuth();
+    lock();
+
+    const form = document.getElementById('management-preview-form');
+    const input = document.getElementById('management-preview-password');
+    const show = document.getElementById('management-preview-show');
+    const error = document.getElementById('management-preview-error');
+    if (!form || !input || !show || !error) return;
+
+    function clearError(){
+      error.textContent = '';
+      input.classList.remove('invalid');
+      input.removeAttribute('aria-invalid');
+    }
+
+    show.addEventListener('change', function(){
+      input.type = show.checked ? 'text' : 'password';
+      input.focus();
+    });
+
+    input.addEventListener('input', clearError);
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      clearError();
+      if (input.value.trim() !== PASSWORD){
+        error.textContent = 'Incorrect Management password. Please try again.';
+        input.classList.add('invalid');
+        input.setAttribute('aria-invalid','true');
+        input.focus();
+        input.select();
+        return false;
+      }
+      writeAuth();
+      unlock();
+      return false;
+    });
+
+    input.focus();
+  }
+
+  // localStorage is shared by same-origin tabs. Keep already-open tabs in sync too.
+  window.addEventListener('storage', function(e){
+    if (e.key !== KEY) return;
+    if (readAuth()) unlock();
+    else location.reload();
+  });
+
+  // Any Management logout clears the shared browser-tab authorization first.
+  document.addEventListener('click', function(e){
+    const link = e.target.closest('a[href*="/api/logout?area=management"]');
+    if (link) clearAuth();
+  });
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once:true});
+  else init();
+})();
 </script>
 <div class="app">
 <aside class="sidebar">
