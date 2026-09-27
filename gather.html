@@ -166,7 +166,8 @@
 
 
     /* Compact Gather marketing treatment */
-    .gather-hero{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:54px;align-items:center;padding:54px 0 58px;min-height:0}
+    .gather-hero{padding:50px 0 46px;min-height:0}
+    .gather-hero-main{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:54px;align-items:center}
     .gather-hero-copy h1{font:500 clamp(3.45rem,6vw,5.7rem)/.9 "Cormorant Garamond",Georgia,serif;color:var(--navy);letter-spacing:-.035em;margin:15px 0 22px;max-width:650px}
     .gather-hero-copy .hero-text{font-size:1rem;max-width:600px;margin-bottom:22px}
     .gather-carousel{min-width:0}
@@ -179,21 +180,17 @@
     .gather-carousel-controls button{width:46px;height:46px;border:1px solid var(--navy);border-radius:50%;background:var(--navy);color:#fff;cursor:pointer;font:400 1.45rem/1 sans-serif;display:grid;place-items:center;box-shadow:0 5px 14px rgba(13,35,64,.16);transition:background .2s ease,border-color .2s ease,transform .2s ease}
     .gather-carousel-controls button:hover{background:#173654;border-color:#173654;transform:translateY(-1px)}
     .gather-carousel-controls button:focus-visible{outline:3px solid rgba(184,156,122,.45);outline-offset:3px}
-    .compact-gather{padding:46px 0}
-    .gather-summary{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:62px;align-items:start}
-    .gather-summary h2{font:500 clamp(2.7rem,4.5vw,4.1rem)/.96 "Cormorant Garamond",Georgia,serif;color:var(--navy);letter-spacing:-.025em;margin:12px 0 18px}
-    .gather-summary>div:first-child>p:last-child{margin:0;max-width:570px;color:#5E6872;font-size:.94rem}
-    .gather-types{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
-    .gather-types>div{min-height:108px;padding:17px 18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.38)}
+        .gather-types{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:34px}
+    .gather-types>div{min-height:96px;padding:15px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.30)}
     .gather-types strong{display:block;font:600 1.35rem/1.05 "Cormorant Garamond",Georgia,serif;color:var(--navy);margin-bottom:7px}
     .gather-types span{display:block;color:#68717A;font-size:.78rem;line-height:1.45}
     .gather-details{padding:48px 0}
     .gather-details .section-heading{margin-bottom:22px}
     @media(max-width:980px){
-      .booking-layout,.request-layout{grid-template-columns:1fr;gap:42px}      .gather-hero{grid-template-columns:1fr;gap:32px;padding:46px 0 50px}.gather-carousel{max-width:760px}.gather-summary{grid-template-columns:1fr;gap:32px}
+      .booking-layout,.request-layout{grid-template-columns:1fr;gap:42px}      .gather-hero-main{grid-template-columns:1fr;gap:32px}.gather-hero{padding:44px 0 42px}.gather-carousel{max-width:760px}.gather-types{grid-template-columns:1fr 1fr}
     }
     @media(max-width:640px){
-      .event-booking,.inquiry{padding:44px 0}      .gather-hero{padding:38px 0 42px}.gather-slide,.gather-slide img{width:214px}.gather-slide img{height:152px}.gather-carousel-controls{justify-content:flex-end}.compact-gather,.gather-details{padding:38px 0}.gather-types{grid-template-columns:1fr}
+      .event-booking,.inquiry{padding:44px 0}      .gather-hero{padding:36px 0 38px}.gather-slide,.gather-slide img{width:214px}.gather-slide img{height:152px}.gather-carousel-controls{justify-content:flex-end}.gather-details{padding:38px 0}.gather-types{grid-template-columns:1fr;margin-top:28px}
     }
     @media(max-width:930px){
       .hero{grid-template-columns:1fr;gap:24px;min-height:auto;padding:54px 0 60px}.hero-mark{display:none}
@@ -232,44 +229,37 @@
   </header>
 <main>
 <section class="gather-hero shell" id="gatherings">
-  <div class="gather-hero-copy">
-    <p class="kicker">Gather · Katama, Martha's Vineyard</p>
-    <h1>Small gatherings on Martha's Vineyard.</h1>
-    <p class="hero-text">Vineyard Vista offers a private Katama home for intimate celebrations including bridal showers, baby showers, milestone birthdays, brunches, and family gatherings on select dates. Day-rate access may be available without an overnight stay.</p>
-    <a class="text-link" href="#event-availability">Check gathering availability <span aria-hidden="true">→</span></a>
-  </div>
+  <div class="gather-hero-main">
+    <div class="gather-hero-copy">
+      <p class="kicker">Gather · Katama, Martha's Vineyard</p>
+      <h1>Small gatherings on Martha's Vineyard.</h1>
+      <p class="hero-text">Vineyard Vista offers a private Katama home for intimate celebrations including bridal and baby showers, milestone birthdays, brunches, lunches, and family gatherings. The setting is intentionally residential and relaxed rather than a traditional event venue, with day-rate access considered on select dates.</p>
+      <a class="text-link" href="#inquiry">Request a gathering date <span aria-hidden="true">→</span></a>
+    </div>
 
-  <div class="gather-carousel" aria-label="Gathering photos">
-    <div class="gather-carousel-viewport" id="gather-carousel">
-      <div class="gather-carousel-track">
-        <figure class="gather-slide"><img src="Gather/event-01-baby-shower.jpeg" alt="Baby shower at a private Martha's Vineyard home in Katama"></figure>
-        <figure class="gather-slide"><img src="Gather/event-02-daytime-gathering.jpeg" alt="Small daytime event on Martha's Vineyard"></figure>
-        <figure class="gather-slide"><img src="Gather/event-03-intimate-lunch.jpeg" alt="Private bridal shower or brunch on Martha's Vineyard"></figure>
-        <figure class="gather-slide"><img src="Gather/event-04-candlelit-dinner.jpeg" alt="Intimate private dinner gathering on Martha's Vineyard"></figure>
-        <figure class="gather-slide"><img src="Gather/event-05-evening-cocktails.jpeg" alt="Small evening celebration at a Martha's Vineyard home"></figure>
-        <figure class="gather-slide"><img src="Gather/event-06-family-movie-night.jpeg" alt="Small family gathering at a private Martha's Vineyard home"></figure>
+    <div class="gather-carousel" aria-label="Gathering photos">
+      <div class="gather-carousel-viewport" id="gather-carousel">
+        <div class="gather-carousel-track">
+          <figure class="gather-slide"><img src="Gather/event-01-baby-shower.jpeg" alt="Baby shower at a private Martha's Vineyard home in Katama"></figure>
+          <figure class="gather-slide"><img src="Gather/event-02-daytime-gathering.jpeg" alt="Small daytime event on Martha's Vineyard"></figure>
+          <figure class="gather-slide"><img src="Gather/event-03-intimate-lunch.jpeg" alt="Private bridal shower or brunch on Martha's Vineyard"></figure>
+          <figure class="gather-slide"><img src="Gather/event-04-candlelit-dinner.jpeg" alt="Intimate private dinner gathering on Martha's Vineyard"></figure>
+          <figure class="gather-slide"><img src="Gather/event-05-evening-cocktails.jpeg" alt="Small evening celebration at a Martha's Vineyard home"></figure>
+          <figure class="gather-slide"><img src="Gather/event-06-family-movie-night.jpeg" alt="Small family gathering at a private Martha's Vineyard home"></figure>
+        </div>
+      </div>
+      <div class="gather-carousel-controls">
+        <button type="button" id="gather-prev" aria-label="Previous gathering image">←</button>
+        <button type="button" id="gather-next" aria-label="Next gathering image">→</button>
       </div>
     </div>
-    <div class="gather-carousel-controls">
-      <button type="button" id="gather-prev" aria-label="Previous gathering image">←</button>
-      <button type="button" id="gather-next" aria-label="Next gathering image">→</button>
-    </div>
   </div>
-</section>
 
-<section class="section alt compact-gather" id="occasions">
-  <div class="shell gather-summary">
-    <div>
-      <p class="kicker">Private gatherings</p>
-      <h2>A private setting for small Martha's Vineyard celebrations.</h2>
-      <p>Gather is designed for intimate occasions in a private-home setting rather than a traditional event venue. It works especially well for showers, milestone celebrations, brunches, lunches, and small family gatherings in Katama and Edgartown.</p>
-    </div>
-    <div class="gather-types" aria-label="Gathering types">
-      <div><strong>Showers</strong><span>Bridal and baby showers</span></div>
-      <div><strong>Milestones</strong><span>Birthdays, anniversaries, graduations</span></div>
-      <div><strong>Lunches & brunches</strong><span>Relaxed daytime celebrations</span></div>
-      <div><strong>Family gatherings</strong><span>Small reunions and special occasions</span></div>
-    </div>
+  <div class="gather-types" aria-label="Gathering types">
+    <div><strong>Showers</strong><span>Bridal and baby showers</span></div>
+    <div><strong>Milestones</strong><span>Birthdays, anniversaries, graduations</span></div>
+    <div><strong>Lunches & brunches</strong><span>Relaxed daytime celebrations</span></div>
+    <div><strong>Family gatherings</strong><span>Small reunions and special occasions</span></div>
   </div>
 </section>
 
@@ -365,91 +355,6 @@
     gatherPrev?.addEventListener('click', () => scrollGather(-1));
     gatherNext?.addEventListener('click', () => scrollGather(1));
 
-    const calendarStart = new Date(2026, 9, 1);
-    const calendarEnd = new Date(2027, 4, 31);
-    let calendarIndex = 0;
-    let selectedDate = null;
-    const calendarEl = document.getElementById('event-calendar');
-    const rangeLabel = document.getElementById('calendar-range-label');
-    const prevBtn = document.getElementById('calendar-prev');
-    const nextBtn = document.getElementById('calendar-next');
-    const eventDateInput = document.getElementById('event-date');
-    const selectedDisplay = document.getElementById('selected-date-display');
-    const months = [];
-    for (let d = new Date(calendarStart); d <= calendarEnd; d.setMonth(d.getMonth() + 1)) {
-      months.push(new Date(d.getFullYear(), d.getMonth(), 1));
-    }
-    const monthName = d => d.toLocaleDateString('en-US', {month:'long', year:'numeric'});
-    const isoDate = d => {
-      const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), day=String(d.getDate()).padStart(2,'0');
-      return `${y}-${m}-${day}`;
-    };
-    const prettyDate = d => d.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
-
-    function buildMonth(monthDate) {
-      const wrap = document.createElement('div');
-      wrap.className = 'calendar-month';
-      const title = document.createElement('h3');
-      title.textContent = monthName(monthDate);
-      wrap.appendChild(title);
-      const grid = document.createElement('div');
-      grid.className = 'calendar-grid';
-      ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(day => {
-        const cell = document.createElement('div'); cell.className='dow'; cell.textContent=day; grid.appendChild(cell);
-      });
-      const first = new Date(monthDate.getFullYear(), monthDate.getMonth(), 1);
-      const last = new Date(monthDate.getFullYear(), monthDate.getMonth()+1, 0);
-      for (let i=0;i<first.getDay();i++) {
-        const blank=document.createElement('div'); blank.className='calendar-day outside'; grid.appendChild(blank);
-      }
-      for (let day=1; day<=last.getDate(); day++) {
-        const d = new Date(monthDate.getFullYear(), monthDate.getMonth(), day);
-        const btn = document.createElement('button');
-        btn.type='button'; btn.className='calendar-day'; btn.textContent=String(day);
-        btn.setAttribute('aria-label', `Request ${prettyDate(d)}`);
-        if (selectedDate && isoDate(d) === isoDate(selectedDate)) btn.classList.add('selected');
-        btn.addEventListener('click', () => selectDate(d));
-        grid.appendChild(btn);
-      }
-      wrap.appendChild(grid);
-      return wrap;
-    }
-
-    function renderCalendar() {
-      if (!calendarEl) return;
-      calendarEl.innerHTML='';
-      const visible = window.innerWidth <= 930 ? 1 : 2;
-      const maxIndex = Math.max(0, months.length-visible);
-      calendarIndex = Math.min(calendarIndex, maxIndex);
-      for (let i=0;i<visible;i++) calendarEl.appendChild(buildMonth(months[calendarIndex+i]));
-      const first=months[calendarIndex], last=months[Math.min(calendarIndex+visible-1, months.length-1)];
-      rangeLabel.textContent = first.getMonth()===last.getMonth() ? monthName(first) : `${first.toLocaleDateString('en-US',{month:'long'})}–${last.toLocaleDateString('en-US',{month:'long',year:'numeric'})}`;
-      prevBtn.disabled = calendarIndex===0;
-      nextBtn.disabled = calendarIndex>=maxIndex;
-      prevBtn.style.opacity = prevBtn.disabled ? '.35' : '1';
-      nextBtn.style.opacity = nextBtn.disabled ? '.35' : '1';
-    }
-    function selectDate(d) {
-      selectedDate = new Date(d.getFullYear(),d.getMonth(),d.getDate());
-      eventDateInput.value = isoDate(selectedDate);
-      selectedDisplay.textContent = prettyDate(selectedDate);
-      document.getElementById('inquiry').scrollIntoView({behavior:'smooth',block:'start'});
-    }
-    prevBtn?.addEventListener('click',()=>{calendarIndex=Math.max(0,calendarIndex-(window.innerWidth<=930?1:2));renderCalendar();});
-    nextBtn?.addEventListener('click',()=>{const visible=window.innerWidth<=930?1:2;calendarIndex=Math.min(Math.max(0,months.length-visible),calendarIndex+visible);renderCalendar();});
-    eventDateInput?.addEventListener('change',()=>{
-      if (!eventDateInput.value) return;
-      const parts=eventDateInput.value.split('-').map(Number);
-      const d=new Date(parts[0],parts[1]-1,parts[2]);
-      if (d>=calendarStart && d<=calendarEnd) {
-        selectedDate=d; selectedDisplay.textContent=prettyDate(d);
-        const idx=months.findIndex(m=>m.getFullYear()===d.getFullYear()&&m.getMonth()===d.getMonth());
-        if(idx>=0){calendarIndex=Math.max(0,Math.min(idx,months.length-(window.innerWidth<=930?1:2)));renderCalendar();}
-      }
-    });
-    let resizeTimer;
-    window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(renderCalendar,120);});
-
     const form = document.getElementById('event-request-form');
     const status = document.getElementById('event-form-status');
     form?.addEventListener('submit', async (e) => {
@@ -476,9 +381,6 @@
         if (!response.ok) throw new Error(result.error || result.message || 'Unable to submit your event request.');
         status.textContent = result.message || 'Thank you. Your event request has been received.';
         form.reset();
-        selectedDate = null;
-        eventDateInput.value = '';
-        selectedDisplay.textContent = 'Choose a date from the calendar';
       } catch (error) {
         status.textContent = error.message || 'Unable to submit your event request. Please try again.';
       } finally {
