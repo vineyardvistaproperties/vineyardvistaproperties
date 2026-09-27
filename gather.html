@@ -66,7 +66,32 @@
     .gallery-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:50px}
     .gallery-row .photo-frame{height:420px}
     .gallery-row .photo-frame:nth-child(2){height:455px;margin-top:-35px}
-    .image-eyebrow{position:absolute;left:18px;bottom:16px;background:rgba(13,35,64,.88);color:white;padding:8px 11px;font-size:.59rem;text-transform:uppercase;letter-spacing:.13em;font-weight:600}
+    .image-eyebrow{position:absolute;left:14px;bottom:12px;background:rgba(13,35,64,.86);color:white;padding:7px 9px;font-size:.55rem;text-transform:uppercase;letter-spacing:.12em;font-weight:600}
+
+    /* Gather imagery is intentionally modest in scale and woven into the editorial copy. */
+    .editorial-feature{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:68px;align-items:center}
+    .editorial-feature-copy{display:grid;grid-template-columns:.8fr 1.2fr;gap:58px;align-items:start}
+    .editorial-feature-copy .statement{font:500 clamp(2.5rem,4.4vw,4.1rem)/1 "Cormorant Garamond",Georgia,serif;color:var(--navy);letter-spacing:-.025em;margin:0}
+    .inline-figure{margin:0;justify-self:end;width:min(100%,390px)}
+    .inline-figure .photo-frame{height:275px}
+    .inline-figure figcaption{margin-top:10px;color:#707981;font-size:.67rem;line-height:1.45}
+
+    .occasion-composition{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:30px;align-items:start}
+    .occasion-composition .occasion-grid{grid-template-columns:repeat(2,1fr)}
+    .occasion-photo-stack{display:grid;gap:18px}
+    .occasion-photo-stack .photo-frame{height:220px}
+    .occasion-photo-stack .photo-frame:last-child{height:250px}
+
+    .experience-inline{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:48px;align-items:center;margin-top:42px;padding-top:34px;border-top:1px solid var(--line)}
+    .experience-note{font:500 clamp(1.8rem,3vw,2.7rem)/1.06 "Cormorant Garamond",Georgia,serif;color:var(--navy);margin:0;max-width:650px}
+    .experience-inline .photo-frame{height:245px}
+
+    .planning-editorial{display:grid;grid-template-columns:minmax(0,1.15fr) 330px;gap:54px;align-items:start}
+    .planning-editorial .planning-list{grid-template-columns:1fr;gap:30px}
+    .planning-editorial .planning-step{padding-top:40px}
+    .planning-visuals{display:grid;gap:18px;padding-top:6px}
+    .planning-visuals .photo-frame{height:205px}
+    .planning-visuals .photo-frame:last-child{height:235px}
     .alt{background:rgba(255,255,255,.48)}
     .section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:36px;margin-bottom:42px}
     .section-heading h2,.subsection-heading h2{font:500 clamp(2.7rem,5vw,4.5rem)/.95 "Cormorant Garamond",Georgia,serif;color:var(--navy);letter-spacing:-.025em;margin:0}
@@ -167,12 +192,16 @@
       .occasion-grid{grid-template-columns:1fr 1fr}.editorial-split{grid-template-columns:1fr;gap:35px}
       .experience-grid{grid-template-columns:1fr}.experience-item{border-right:0;border-bottom:1px solid var(--line);padding:28px 0;margin:0}.experience-item:last-child{border-bottom:0}
       .planning-list{grid-template-columns:1fr;gap:34px}.details-strip{grid-template-columns:1fr 1fr}.booking-heading{grid-template-columns:1fr;gap:22px}.calendar-months{grid-template-columns:1fr}.inquiry-grid{grid-template-columns:1fr;gap:42px}
-      .event-photo-pair{grid-template-columns:1fr}.event-photo-pair .photo-frame:first-child,.event-photo-pair .photo-frame:last-child{height:440px}.gallery-row{grid-template-columns:1fr 1fr}.gallery-row .photo-frame,.gallery-row .photo-frame:nth-child(2){height:360px;margin-top:0}
+      .editorial-feature{grid-template-columns:1fr;gap:34px}.editorial-feature-copy{grid-template-columns:1fr;gap:24px}.inline-figure{justify-self:start;width:min(100%,420px)}
+      .occasion-composition{grid-template-columns:1fr}.occasion-photo-stack{grid-template-columns:1fr 1fr}.occasion-photo-stack .photo-frame,.occasion-photo-stack .photo-frame:last-child{height:220px}
+      .experience-inline{grid-template-columns:1fr 320px;gap:28px}.planning-editorial{grid-template-columns:1fr 300px;gap:34px}
     }
     @media(max-width:760px){
       .shell{width:min(var(--max),calc(100% - 30px))}.brand-row{min-height:74px}.menu-toggle{display:block}.site-nav{display:none;position:absolute;top:74px;left:0;right:0;background:var(--ivory);padding:20px 15px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:16px}.site-nav.open{display:flex}
       .hero h1{font-size:clamp(3.5rem,17vw,5.4rem)}.section{padding:70px 0}.section-heading{align-items:flex-start;flex-direction:column;gap:16px}.occasion-grid,.details-strip{grid-template-columns:1fr}.event-booking{padding:72px 0 80px}.calendar-shell{padding:18px}.calendar-months{grid-template-columns:1fr}.calendar-grid .dow,.calendar-day{min-height:40px}.inquiry{padding:82px 0}.request-form{padding:24px 18px}.form-grid{grid-template-columns:1fr}.form-grid .full,.form-grid .compact-full{grid-column:auto;max-width:none}.footer-inner{align-items:flex-start;flex-direction:column}
-      .photo-break{padding-bottom:70px}.photo-frame.hero-photo{height:68vw;min-height:330px}.photo-caption{display:block}.photo-caption span{display:block;margin-bottom:5px}.event-photo-pair .photo-frame:first-child,.event-photo-pair .photo-frame:last-child{height:320px}.experience-photo{height:68vw;min-height:330px}.gallery-row{grid-template-columns:1fr}.gallery-row .photo-frame,.gallery-row .photo-frame:nth-child(2){height:320px;margin-top:0}
+      .editorial-feature{grid-template-columns:1fr}.editorial-feature-copy{grid-template-columns:1fr;gap:22px}.inline-figure{width:min(88%,340px);justify-self:center}.inline-figure .photo-frame{height:220px}
+      .occasion-composition{grid-template-columns:1fr}.occasion-photo-stack{grid-template-columns:1fr 1fr;gap:12px}.occasion-photo-stack .photo-frame,.occasion-photo-stack .photo-frame:last-child{height:170px}
+      .experience-inline{grid-template-columns:1fr;gap:24px}.experience-inline .photo-frame{width:min(88%,330px);height:210px}.planning-editorial{grid-template-columns:1fr;gap:28px}.planning-visuals{grid-template-columns:1fr 1fr;gap:12px}.planning-visuals .photo-frame,.planning-visuals .photo-frame:last-child{height:170px}
     }
   </style>
 </head>
@@ -186,12 +215,10 @@
       <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="stay.html#house">The House</a>
-        <a href="stay.html#gallery">Gallery</a>
         <a href="stay.html#vineyard">The Vineyard</a>
-        <a href="stay.html#availability">Availability</a>
         <a href="stay.html#land-rover">Land Rover</a>
+        <a href="stay.html">Stay</a>
         <a class="current" href="gather.html" aria-current="page">Gather</a>
-        <a class="nav-cta" href="stay.html#request">Request Your Stay</a>
       </nav>
     </div>
   </header>
@@ -207,17 +234,19 @@
 <img alt="" onerror="this.parentElement.classList.add('logo-fallback')" src="assets/vvp-logo.jpeg"/>
 </div>
 </section>
-<section aria-label="Private gathering at Vineyard Vista" class="photo-break shell">
-<div class="photo-frame hero-photo"><img alt="A small daytime celebration under a tent beside a shingled Vineyard home" src="Gather/event-01-baby-shower.jpeg"/></div>
-<div class="photo-caption"><span>Private gatherings at Vineyard Vista</span><span>Designed to feel personal, residential, and distinctly of the island.</span></div>
-</section>
 <section class="section shell" id="gatherings">
-<div class="editorial-split">
-<p class="statement">Gathering, without the venue feeling.</p>
-<div class="editorial-copy">
-<p>Vineyard Vista is a home first. Our private gatherings are intentionally small, relaxed, and personal—suited to a long lunch, an afternoon shower, a celebratory toast, or a few meaningful hours together.</p>
-<p>Select day-rate access offers the chance to enjoy the property without an overnight stay when available, creating an easy setting for hosts who want something more intimate than a traditional event venue.</p>
-</div>
+<div class="editorial-feature">
+  <div class="editorial-feature-copy">
+    <p class="statement">Gathering, without the venue feeling.</p>
+    <div class="editorial-copy">
+      <p>Vineyard Vista is a home first. Our private gatherings are intentionally small, relaxed, and personal—suited to a long lunch, an afternoon shower, a celebratory toast, or a few meaningful hours together.</p>
+      <p>Select day-rate access offers the chance to enjoy the property without an overnight stay when available, creating an easy setting for hosts who want something more intimate than a traditional event venue.</p>
+    </div>
+  </div>
+  <figure class="inline-figure">
+    <div class="photo-frame"><img alt="A small daytime celebration under a tent beside a shingled Vineyard home" src="Gather/event-01-baby-shower.jpeg"/></div>
+    <figcaption>Private gatherings designed to feel personal, residential, and distinctly of the island.</figcaption>
+  </figure>
 </div>
 </section>
 <section class="section alt" id="occasions">
@@ -226,15 +255,17 @@
 <h2>Made for the occasion</h2>
 <p class="section-intro">Thoughtful celebrations that feel at home on the Vineyard.</p>
 </div>
-<div class="occasion-grid">
-<article class="occasion"><span>01</span><h3>Bridal Showers</h3><p>A polished setting for brunch, lunch, gifts, and time together before the wedding weekend arrives.</p></article>
-<article class="occasion"><span>02</span><h3>Baby Showers</h3><p>An intimate, comfortable backdrop for celebrating a growing family with the people who matter most.</p></article>
-<article class="occasion"><span>03</span><h3>Milestone Brunches</h3><p>Birthdays, anniversaries, graduations, and other moments that call for a beautiful table and an unhurried afternoon.</p></article>
-<article class="occasion"><span>04</span><h3>Family Gatherings</h3><p>Small reunions, holiday lunches, and meaningful get-togethers in a setting designed to feel warm, private, and easy.</p></article>
-</div>
-<div aria-label="Event inspiration" class="event-photo-pair">
-<div class="photo-frame"><img alt="Daytime gathering with guests seated at a long table under a white tent" src="Gather/event-02-daytime-gathering.jpeg"/><span class="image-eyebrow">Daytime gatherings</span></div>
-<div class="photo-frame"><img alt="Intimate lunch under a tent with floral table settings and a Vineyard home beyond" src="Gather/event-03-intimate-lunch.jpeg"/><span class="image-eyebrow">A table that feels at home</span></div>
+<div class="occasion-composition">
+  <div class="occasion-grid">
+    <article class="occasion"><span>01</span><h3>Bridal Showers</h3><p>A polished setting for brunch, lunch, gifts, and time together before the wedding weekend arrives.</p></article>
+    <article class="occasion"><span>02</span><h3>Baby Showers</h3><p>An intimate, comfortable backdrop for celebrating a growing family with the people who matter most.</p></article>
+    <article class="occasion"><span>03</span><h3>Milestone Brunches</h3><p>Birthdays, anniversaries, graduations, and other moments that call for a beautiful table and an unhurried afternoon.</p></article>
+    <article class="occasion"><span>04</span><h3>Family Gatherings</h3><p>Small reunions, holiday lunches, and meaningful get-togethers in a setting designed to feel warm, private, and easy.</p></article>
+  </div>
+  <div aria-label="Event inspiration" class="occasion-photo-stack">
+    <div class="photo-frame"><img alt="Daytime gathering with guests seated at a long table under a white tent" src="Gather/event-02-daytime-gathering.jpeg"/><span class="image-eyebrow">Daytime gatherings</span></div>
+    <div class="photo-frame"><img alt="Intimate lunch under a tent with floral table settings and a Vineyard home beyond" src="Gather/event-03-intimate-lunch.jpeg"/><span class="image-eyebrow">A table that feels at home</span></div>
+  </div>
 </div>
 </div>
 </section>
@@ -248,7 +279,10 @@
 <div class="experience-item"><div class="number">02</div><h3>Your preferred team</h3><p>Bring an approved caterer, florist, photographer, or other event professionals to shape the day around your own style and traditions.</p></div>
 <div class="experience-item"><div class="number">03</div><h3>Intentionally small</h3><p>Every gathering is reviewed individually so the guest count, event format, and use of the property remain appropriate for the home and its setting.</p></div>
 </div>
-<div class="photo-frame experience-photo"><img alt="Candlelit dinner gathering under a tent at Vineyard Vista" src="Gather/event-04-candlelit-dinner.jpeg"/><span class="image-eyebrow">From afternoon into evening</span></div>
+<div class="experience-inline">
+  <p class="experience-note">A few memorable hours, shaped around the people and traditions that matter to you.</p>
+  <div class="photo-frame"><img alt="Candlelit dinner gathering under a tent at Vineyard Vista" src="Gather/event-04-candlelit-dinner.jpeg"/><span class="image-eyebrow">From afternoon into evening</span></div>
+</div>
 </section>
 <section class="section alt" id="planning">
 <div class="shell">
@@ -256,15 +290,16 @@
 <h2>Planning your gathering</h2>
 <p class="section-intro">Simple, personal, and considered from the beginning.</p>
 </div>
-<div class="planning-list">
-<div class="planning-step"><h3>Tell us what you're planning</h3><p>Share your preferred date, occasion, estimated guest count, and the general shape of the day.</p></div>
-<div class="planning-step"><h3>Shape the details</h3><p>We'll review the proposed gathering, available spaces, timing, and any caterers or other professionals you would like to bring in.</p></div>
-<div class="planning-step"><h3>Make it yours</h3><p>Once confirmed, the house becomes your setting for a few memorable hours on Martha's Vineyard.</p></div>
-</div>
-<div aria-label="More gathering ideas" class="gallery-row">
-<div class="photo-frame"><img alt="Evening cocktail gathering with guests beside a shingled Vineyard home" src="Gather/event-05-evening-cocktails.jpeg"/><span class="image-eyebrow">Cocktails &amp; celebrations</span></div>
-<div class="photo-frame"><img alt="Children gathered for an outdoor movie and birthday celebration on the lawn" src="Gather/event-06-family-movie-night.jpeg"/><span class="image-eyebrow">Family moments</span></div>
-
+<div class="planning-editorial">
+  <div class="planning-list">
+    <div class="planning-step"><h3>Tell us what you're planning</h3><p>Share your preferred date, occasion, estimated guest count, and the general shape of the day.</p></div>
+    <div class="planning-step"><h3>Shape the details</h3><p>We'll review the proposed gathering, available spaces, timing, and any caterers or other professionals you would like to bring in.</p></div>
+    <div class="planning-step"><h3>Make it yours</h3><p>Once confirmed, the house becomes your setting for a few memorable hours on Martha's Vineyard.</p></div>
+  </div>
+  <div aria-label="More gathering ideas" class="planning-visuals">
+    <div class="photo-frame"><img alt="Evening cocktail gathering with guests beside a shingled Vineyard home" src="Gather/event-05-evening-cocktails.jpeg"/><span class="image-eyebrow">Cocktails &amp; celebrations</span></div>
+    <div class="photo-frame"><img alt="Children gathered for an outdoor movie and birthday celebration on the lawn" src="Gather/event-06-family-movie-night.jpeg"/><span class="image-eyebrow">Family moments</span></div>
+  </div>
 </div>
 </div>
 </section>
