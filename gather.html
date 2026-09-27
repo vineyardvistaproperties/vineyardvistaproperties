@@ -5,9 +5,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="#0D2340" name="theme-color"/>
-<meta content="Private occasions and intimate gatherings at Vineyard Vista Properties on Martha's Vineyard." name="description"/>
+<meta content="Small private gatherings at Vineyard Vista Properties on Martha's Vineyard." name="description"/>
 <meta content="noindex,nofollow" name="robots"/>
-<title>Occasions | Vineyard Vista Properties</title>
+<title>Gather | Vineyard Vista Properties</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Libre+Franklin:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
@@ -183,11 +183,38 @@
     .footer-management,.footer-legal,.footer-links{display:flex;align-items:center;gap:10px 22px;flex-wrap:wrap}
     .footer-management a,.footer-legal a,.footer-links a{color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.11em;font-size:.64rem;border-bottom:1px solid rgba(255,255,255,.42);padding-bottom:3px;white-space:nowrap}
 
+
+    /* Compact Gather marketing treatment */
+    .gather-hero{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:54px;align-items:center;padding:54px 0 58px;min-height:0}
+    .gather-hero-copy h1{font:500 clamp(3.45rem,6vw,5.7rem)/.9 "Cormorant Garamond",Georgia,serif;color:var(--navy);letter-spacing:-.035em;margin:15px 0 22px;max-width:650px}
+    .gather-hero-copy .hero-text{font-size:1rem;max-width:600px;margin-bottom:22px}
+    .gather-carousel{min-width:0}
+    .gather-carousel-viewport{overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+    .gather-carousel-viewport::-webkit-scrollbar{display:none}
+    .gather-carousel-track{display:flex;gap:12px;width:max-content;padding:1px}
+    .gather-slide{width:238px;margin:0;scroll-snap-align:start;background:#fff}
+    .gather-slide img{display:block;width:238px;height:170px;object-fit:cover}
+    .gather-slide figcaption{padding:9px 2px 0;color:#69737D;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+    .gather-carousel-controls{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:12px;color:#69737D;font-size:.61rem;text-transform:uppercase;letter-spacing:.12em;font-weight:500}
+    .gather-carousel-controls button{width:32px;height:32px;border:1px solid var(--line);background:transparent;color:var(--navy);cursor:pointer;font:400 1rem/1 sans-serif}
+    .gather-carousel-controls button:hover{border-color:var(--sand)}
+    .compact-gather{padding:46px 0}
+    .gather-summary{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:62px;align-items:start}
+    .gather-summary h2{font:500 clamp(2.7rem,4.5vw,4.1rem)/.96 "Cormorant Garamond",Georgia,serif;color:var(--navy);letter-spacing:-.025em;margin:12px 0 18px}
+    .gather-summary>div:first-child>p:last-child{margin:0;max-width:570px;color:#5E6872;font-size:.94rem}
+    .gather-types{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .gather-types>div{min-height:108px;padding:17px 18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.38)}
+    .gather-types strong{display:block;font:600 1.35rem/1.05 "Cormorant Garamond",Georgia,serif;color:var(--navy);margin-bottom:7px}
+    .gather-types span{display:block;color:#68717A;font-size:.78rem;line-height:1.45}
+    .gather-details{padding:48px 0}
+    .gather-details .section-heading{margin-bottom:22px}
     @media(max-width:980px){
       .booking-layout,.request-layout{grid-template-columns:1fr;gap:42px}.calendar-months{grid-template-columns:1fr}
+      .gather-hero{grid-template-columns:1fr;gap:32px;padding:46px 0 50px}.gather-carousel{max-width:760px}.gather-summary{grid-template-columns:1fr;gap:32px}
     }
     @media(max-width:640px){
       .event-booking,.inquiry{padding:44px 0}.calendar-shell{padding:20px 16px}.request-form{padding:20px 16px}.form-grid{grid-template-columns:1fr;gap:0}.form-grid .full,.form-grid .compact-full{grid-column:auto;max-width:none}
+      .gather-hero{padding:38px 0 42px}.gather-slide,.gather-slide img{width:214px}.gather-slide img{height:152px}.gather-carousel-controls{justify-content:space-between}.compact-gather,.gather-details{padding:38px 0}.gather-types{grid-template-columns:1fr}
     }
     @media(max-width:930px){
       .hero{grid-template-columns:1fr;gap:24px;min-height:auto;padding:54px 0 60px}.hero-mark{display:none}
@@ -225,97 +252,60 @@
     </div>
   </header>
 <main>
-<section class="hero shell">
-<div class="hero-copy">
-<p class="kicker">Private Gatherings · Martha's Vineyard</p>
-<h1>A beautiful place to gather.</h1>
-<p class="hero-text">On select off-season dates, Vineyard Vista welcomes intimate daytime celebrations—from bridal and baby showers to milestone brunches and family gatherings—with the privacy and ease of a thoughtfully appointed island home.</p>
-<a class="text-link" href="#gatherings">Explore private gatherings <span aria-hidden="true">→</span></a>
-</div>
-<div aria-hidden="true" class="hero-mark">
-<img alt="" onerror="this.parentElement.classList.add('logo-fallback')" src="assets/vvp-logo.jpeg"/>
-</div>
-</section>
-<section class="section shell" id="gatherings">
-<div class="editorial-feature">
-  <div class="editorial-feature-copy">
-    <p class="statement">Gathering, without the venue feeling.</p>
-    <div class="editorial-copy">
-      <p>Vineyard Vista is a home first. Our private gatherings are intentionally small, relaxed, and personal—suited to a long lunch, an afternoon shower, a celebratory toast, or a few meaningful hours together.</p>
-      <p>Select day-rate access offers the chance to enjoy the property without an overnight stay when available, creating an easy setting for hosts who want something more intimate than a traditional event venue.</p>
+<section class="gather-hero shell" id="gatherings">
+  <div class="gather-hero-copy">
+    <p class="kicker">Gather · Martha's Vineyard</p>
+    <h1>A beautiful place to gather.</h1>
+    <p class="hero-text">On select off-season dates, Vineyard Vista welcomes small private gatherings—bridal and baby showers, milestone lunches, and family celebrations—with day-rate access when available.</p>
+    <a class="text-link" href="#event-availability">Check gathering availability <span aria-hidden="true">→</span></a>
+  </div>
+
+  <div class="gather-carousel" aria-label="Gathering inspiration">
+    <div class="gather-carousel-viewport" id="gather-carousel">
+      <div class="gather-carousel-track">
+        <figure class="gather-slide"><img src="Gather/event-01-baby-shower.jpeg" alt="Small daytime shower beside a shingled Vineyard home"><figcaption>Showers</figcaption></figure>
+        <figure class="gather-slide"><img src="Gather/event-02-daytime-gathering.jpeg" alt="Daytime gathering around a long table"><figcaption>Daytime gatherings</figcaption></figure>
+        <figure class="gather-slide"><img src="Gather/event-03-intimate-lunch.jpeg" alt="Intimate lunch with floral table settings"><figcaption>Long lunches</figcaption></figure>
+        <figure class="gather-slide"><img src="Gather/event-04-candlelit-dinner.jpeg" alt="Small candlelit dinner gathering"><figcaption>Early evenings</figcaption></figure>
+        <figure class="gather-slide"><img src="Gather/event-05-evening-cocktails.jpeg" alt="Small cocktail gathering beside a shingled home"><figcaption>Celebrations</figcaption></figure>
+        <figure class="gather-slide"><img src="Gather/event-06-family-movie-night.jpeg" alt="Family gathering on the lawn"><figcaption>Family moments</figcaption></figure>
+      </div>
+    </div>
+    <div class="gather-carousel-controls">
+      <button type="button" id="gather-prev" aria-label="Previous gathering image">←</button>
+      <span>Gathering inspiration</span>
+      <button type="button" id="gather-next" aria-label="Next gathering image">→</button>
     </div>
   </div>
-  <figure class="inline-figure">
-    <div class="photo-frame"><img alt="A small daytime celebration under a tent beside a shingled Vineyard home" src="Gather/event-01-baby-shower.jpeg"/></div>
-    <figcaption>Private gatherings designed to feel personal, residential, and distinctly of the island.</figcaption>
-  </figure>
-</div>
 </section>
-<section class="section alt" id="occasions">
-<div class="shell">
-<div class="section-heading">
-<h2>Made for the occasion</h2>
-<p class="section-intro">Thoughtful celebrations that feel at home on the Vineyard.</p>
-</div>
-<div class="occasion-composition">
-  <div class="occasion-grid">
-    <article class="occasion"><span>01</span><h3>Bridal Showers</h3><p>A polished setting for brunch, lunch, gifts, and time together before the wedding weekend arrives.</p></article>
-    <article class="occasion"><span>02</span><h3>Baby Showers</h3><p>An intimate, comfortable backdrop for celebrating a growing family with the people who matter most.</p></article>
-    <article class="occasion"><span>03</span><h3>Milestone Brunches</h3><p>Birthdays, anniversaries, graduations, and other moments that call for a beautiful table and an unhurried afternoon.</p></article>
-    <article class="occasion"><span>04</span><h3>Family Gatherings</h3><p>Small reunions, holiday lunches, and meaningful get-togethers in a setting designed to feel warm, private, and easy.</p></article>
+
+<section class="section alt compact-gather" id="occasions">
+  <div class="shell gather-summary">
+    <div>
+      <p class="kicker">Private gatherings</p>
+      <h2>Made for smaller celebrations.</h2>
+      <p>Gather is intentionally simple: a private-home setting for a few meaningful hours with the people closest to you. The house is the backdrop—not a full-service event venue.</p>
+    </div>
+    <div class="gather-types" aria-label="Gathering types">
+      <div><strong>Showers</strong><span>Bridal and baby showers</span></div>
+      <div><strong>Milestones</strong><span>Birthdays, anniversaries, graduations</span></div>
+      <div><strong>Lunches & brunches</strong><span>Relaxed daytime celebrations</span></div>
+      <div><strong>Family gatherings</strong><span>Small reunions and special occasions</span></div>
+    </div>
   </div>
-  <div aria-label="Event inspiration" class="occasion-photo-stack">
-    <div class="photo-frame"><img alt="Daytime gathering with guests seated at a long table under a white tent" src="Gather/event-02-daytime-gathering.jpeg"/><span class="image-eyebrow">Daytime gatherings</span></div>
-    <div class="photo-frame"><img alt="Intimate lunch under a tent with floral table settings and a Vineyard home beyond" src="Gather/event-03-intimate-lunch.jpeg"/><span class="image-eyebrow">A table that feels at home</span></div>
-  </div>
-</div>
-</div>
 </section>
-<section class="section shell" id="experience">
-<div class="section-heading">
-<h2>A private-home experience</h2>
-<p class="section-intro">The house provides the setting; your gathering still feels distinctly yours.</p>
-</div>
-<div class="experience-grid">
-<div class="experience-item"><div class="number">01</div><h3>Room to settle in</h3><p>Gather indoors and out, with the comfort, texture, and sense of place that make a private Vineyard home feel different from a conventional venue.</p></div>
-<div class="experience-item"><div class="number">02</div><h3>Your preferred team</h3><p>Bring an approved caterer, florist, photographer, or other event professionals to shape the day around your own style and traditions.</p></div>
-<div class="experience-item"><div class="number">03</div><h3>Intentionally small</h3><p>Every gathering is reviewed individually so the guest count, event format, and use of the property remain appropriate for the home and its setting.</p></div>
-</div>
-<div class="experience-inline">
-  <p class="experience-note">A few memorable hours, shaped around the people and traditions that matter to you.</p>
-  <div class="photo-frame"><img alt="Candlelit dinner gathering under a tent at Vineyard Vista" src="Gather/event-04-candlelit-dinner.jpeg"/><span class="image-eyebrow">From afternoon into evening</span></div>
-</div>
-</section>
-<section class="section alt" id="planning">
-<div class="shell">
-<div class="section-heading">
-<h2>Planning your gathering</h2>
-<p class="section-intro">Simple, personal, and considered from the beginning.</p>
-</div>
-<div class="planning-editorial">
-  <div class="planning-list">
-    <div class="planning-step"><h3>Tell us what you're planning</h3><p>Share your preferred date, occasion, estimated guest count, and the general shape of the day.</p></div>
-    <div class="planning-step"><h3>Shape the details</h3><p>We'll review the proposed gathering, available spaces, timing, and any caterers or other professionals you would like to bring in.</p></div>
-    <div class="planning-step"><h3>Make it yours</h3><p>Once confirmed, the house becomes your setting for a few memorable hours on Martha's Vineyard.</p></div>
+
+<section class="section shell gather-details">
+  <div class="section-heading">
+    <h2>Good to know</h2>
+    <p class="section-intro">A few basics before you choose a date.</p>
   </div>
-  <div aria-label="More gathering ideas" class="planning-visuals">
-    <div class="photo-frame"><img alt="Evening cocktail gathering with guests beside a shingled Vineyard home" src="Gather/event-05-evening-cocktails.jpeg"/><span class="image-eyebrow">Cocktails &amp; celebrations</span></div>
-    <div class="photo-frame"><img alt="Children gathered for an outdoor movie and birthday celebration on the lawn" src="Gather/event-06-family-movie-night.jpeg"/><span class="image-eyebrow">Family moments</span></div>
+  <div class="details-strip">
+    <div><span class="mini-label">Availability</span><strong>Select Dates</strong><span>Primarily off-season and shoulder-season.</span></div>
+    <div><span class="mini-label">Scale</span><strong>Small by Design</strong><span>Intimate celebrations rather than large events.</span></div>
+    <div><span class="mini-label">Pricing</span><strong>Day-Rate Access</strong><span>Quoted based on date, guest count, and needs.</span></div>
+    <div><span class="mini-label">Stay</span><strong>Optional</strong><span>Overnight stays may be requested separately when available.</span></div>
   </div>
-</div>
-</div>
-</section>
-<section class="section shell">
-<div class="section-heading">
-<h2>Good to know</h2>
-<p class="section-intro">Private gatherings are offered selectively so the experience remains consistent with the character of the home.</p>
-</div>
-<div class="details-strip">
-<div><span class="mini-label">Availability</span><strong>Select Dates</strong><span>Primarily off-season and shoulder-season dates.</span></div>
-<div><span class="mini-label">Format</span><strong>Daytime Gatherings</strong><span>Designed for intimate celebrations rather than large-scale events.</span></div>
-<div><span class="mini-label">Pricing</span><strong>Day-Rate Access</strong><span>Quoted based on the date, guest count, and event needs.</span></div>
-<div><span class="mini-label">Overnight Stays</span><strong>Separate When Available</strong><span>An overnight stay may be requested separately from the event.</span></div>
-</div>
 </section>
 <section class="event-booking" id="event-availability">
   <div class="shell booking-layout">
@@ -421,6 +411,19 @@
         toggle.setAttribute('aria-expanded', 'false');
       }));
     }
+
+
+    const gatherCarousel = document.getElementById('gather-carousel');
+    const gatherPrev = document.getElementById('gather-prev');
+    const gatherNext = document.getElementById('gather-next');
+    const scrollGather = direction => {
+      if (!gatherCarousel) return;
+      const slide = gatherCarousel.querySelector('.gather-slide');
+      const amount = slide ? slide.getBoundingClientRect().width + 12 : 250;
+      gatherCarousel.scrollBy({left: direction * amount, behavior:'smooth'});
+    };
+    gatherPrev?.addEventListener('click', () => scrollGather(-1));
+    gatherNext?.addEventListener('click', () => scrollGather(1));
 
     const calendarStart = new Date(2026, 9, 1);
     const calendarEnd = new Date(2027, 4, 31);
