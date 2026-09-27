@@ -167,15 +167,15 @@
 
     /* Compact Gather marketing treatment */
     .gather-hero{padding:50px 0 46px;min-height:0}
-    .gather-hero-main{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:54px;align-items:center}
+    .gather-hero-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:44px;align-items:center}
     .gather-hero-copy h1{font:500 clamp(3.45rem,6vw,5.7rem)/.9 "Cormorant Garamond",Georgia,serif;color:var(--navy);letter-spacing:-.035em;margin:15px 0 22px;max-width:650px}
     .gather-hero-copy .hero-text{font-size:1rem;max-width:600px;margin-bottom:22px}
-    .gather-carousel{min-width:0}
+    .gather-carousel{min-width:0;max-width:560px;justify-self:end;width:100%}
     .gather-carousel-viewport{overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
     .gather-carousel-viewport::-webkit-scrollbar{display:none}
     .gather-carousel-track{display:flex;gap:12px;width:max-content;padding:1px}
-    .gather-slide{width:238px;margin:0;scroll-snap-align:start;background:#fff}
-    .gather-slide img{display:block;width:238px;height:170px;object-fit:cover}
+    .gather-slide{width:210px;margin:0;scroll-snap-align:start;background:#fff}
+    .gather-slide img{display:block;width:210px;height:150px;object-fit:cover}
     .gather-carousel-controls{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-top:14px}
     .gather-carousel-controls button{width:46px;height:46px;border:1px solid var(--navy);border-radius:50%;background:var(--navy);color:#fff;cursor:pointer;font:400 1.45rem/1 sans-serif;display:grid;place-items:center;box-shadow:0 5px 14px rgba(13,35,64,.16);transition:background .2s ease,border-color .2s ease,transform .2s ease}
     .gather-carousel-controls button:hover{background:#173654;border-color:#173654;transform:translateY(-1px)}
@@ -187,10 +187,10 @@
     .gather-details{padding:48px 0}
     .gather-details .section-heading{margin-bottom:22px}
     @media(max-width:980px){
-      .booking-layout,.request-layout{grid-template-columns:1fr;gap:42px}      .gather-hero-main{grid-template-columns:1fr;gap:32px}.gather-hero{padding:44px 0 42px}.gather-carousel{max-width:760px}.gather-types{grid-template-columns:1fr 1fr}
+      .booking-layout,.request-layout{grid-template-columns:1fr;gap:42px}      .gather-hero-main{grid-template-columns:1fr;gap:32px}.gather-hero{padding:44px 0 42px}.gather-carousel{max-width:620px;justify-self:start}.gather-types{grid-template-columns:1fr 1fr}
     }
     @media(max-width:640px){
-      .event-booking,.inquiry{padding:44px 0}      .gather-hero{padding:36px 0 38px}.gather-slide,.gather-slide img{width:214px}.gather-slide img{height:152px}.gather-carousel-controls{justify-content:flex-end}.gather-details{padding:38px 0}.gather-types{grid-template-columns:1fr;margin-top:28px}
+      .event-booking,.inquiry{padding:44px 0}      .gather-hero{padding:36px 0 38px}.gather-slide,.gather-slide img{width:188px}.gather-slide img{height:134px}.gather-carousel-controls{justify-content:flex-end}.gather-details{padding:38px 0}.gather-types{grid-template-columns:1fr;margin-top:28px}
     }
     @media(max-width:930px){
       .hero{grid-template-columns:1fr;gap:24px;min-height:auto;padding:54px 0 60px}.hero-mark{display:none}
@@ -241,11 +241,11 @@
       <div class="gather-carousel-viewport" id="gather-carousel">
         <div class="gather-carousel-track">
           <figure class="gather-slide"><img src="Gather/event-01-baby-shower.jpeg" alt="Baby shower at a private Martha's Vineyard home in Katama"></figure>
-          <figure class="gather-slide"><img src="Gather/event-02-daytime-gathering.jpeg" alt="Small daytime event on Martha's Vineyard"></figure>
-          <figure class="gather-slide"><img src="Gather/event-03-intimate-lunch.jpeg" alt="Private bridal shower or brunch on Martha's Vineyard"></figure>
-          <figure class="gather-slide"><img src="Gather/event-04-candlelit-dinner.jpeg" alt="Intimate private dinner gathering on Martha's Vineyard"></figure>
           <figure class="gather-slide"><img src="Gather/event-05-evening-cocktails.jpeg" alt="Small evening celebration at a Martha's Vineyard home"></figure>
+          <figure class="gather-slide"><img src="Gather/event-03-intimate-lunch.jpeg" alt="Private bridal shower or brunch on Martha's Vineyard"></figure>
           <figure class="gather-slide"><img src="Gather/event-06-family-movie-night.jpeg" alt="Small family gathering at a private Martha's Vineyard home"></figure>
+          <figure class="gather-slide"><img src="Gather/event-02-daytime-gathering.jpeg" alt="Small daytime event on Martha's Vineyard"></figure>
+          <figure class="gather-slide"><img src="Gather/event-04-candlelit-dinner.jpeg" alt="Intimate private dinner gathering on Martha's Vineyard"></figure>
         </div>
       </div>
       <div class="gather-carousel-controls">
