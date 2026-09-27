@@ -5,9 +5,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="#0D2340" name="theme-color"/>
-<meta content="Host a small private event on Martha's Vineyard at Vineyard Vista in Katama. Bridal showers, baby showers, milestone birthdays, brunches, family gatherings, and intimate celebrations on select dates." name="description"/>
+<meta content="Host a small private gathering on Martha's Vineyard at Vineyard Vista in Katama. Bridal showers, baby showers, milestone birthdays, brunches, family gatherings, and intimate celebrations on select dates." name="description"/>
 <meta content="index,follow" name="robots"/>
-<title>Small Events on Martha's Vineyard | Gather at Vineyard Vista</title>
+<title>Small Gatherings on Martha's Vineyard | Gather at Vineyard Vista</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Libre+Franklin:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
@@ -233,7 +233,7 @@
     <div class="gather-hero-copy">
       <p class="kicker">Gather · Katama, Martha's Vineyard</p>
       <h1>Small gatherings on Martha's Vineyard.</h1>
-      <p class="hero-text">Vineyard Vista offers a private Katama home for intimate celebrations including bridal and baby showers, milestone birthdays, brunches, lunches, and family gatherings. The setting is intentionally residential and relaxed rather than a traditional event venue, with day-rate access considered on select dates.</p>
+      <p class="hero-text">Vineyard Vista offers a private Katama home for intimate celebrations including bridal and baby showers, milestone birthdays, brunches, lunches, and family gatherings. The setting is intentionally residential and relaxed rather than a traditional venue, with day-rate access considered on select dates.</p>
       <a class="text-link" href="#inquiry">Request a gathering date <span aria-hidden="true">→</span></a>
     </div>
 
@@ -244,7 +244,7 @@
           <figure class="gather-slide"><img src="Gather/event-05-evening-cocktails.jpeg" alt="Small evening celebration at a Martha's Vineyard home"></figure>
           <figure class="gather-slide"><img src="Gather/event-03-intimate-lunch.jpeg" alt="Private bridal shower or brunch on Martha's Vineyard"></figure>
           <figure class="gather-slide"><img src="Gather/event-06-family-movie-night.jpeg" alt="Small family gathering at a private Martha's Vineyard home"></figure>
-          <figure class="gather-slide"><img src="Gather/event-02-daytime-gathering.jpeg" alt="Small daytime event on Martha's Vineyard"></figure>
+          <figure class="gather-slide"><img src="Gather/event-02-daytime-gathering.jpeg" alt="Small daytime gathering on Martha's Vineyard"></figure>
           <figure class="gather-slide"><img src="Gather/event-04-candlelit-dinner.jpeg" alt="Intimate private dinner gathering on Martha's Vineyard"></figure>
         </div>
       </div>
@@ -266,10 +266,11 @@
 <section class="inquiry" id="inquiry">
   <div class="shell request-layout">
     <div>
-      <p class="kicker">Small Event Inquiries</p>
+      <p class="kicker">Small Gathering Inquiries</p>
       <h2>Request a gathering date.</h2>
-      <p class="request-copy">Small events are considered on select off-season and shoulder-season dates. Choose a preferred date for your Martha's Vineyard gathering and we will review it against the property calendar before confirming availability.</p>
-      <p class="request-copy">Day-rate pricing is quoted individually based on the date, guest count, and event needs. Submitting this form is a request only and does not create a reservation or hold a date.</p>
+      <p class="request-copy">Small gatherings are considered on select off-season and shoulder-season dates. Choose a preferred date for your Martha's Vineyard gathering and we will review it against the property calendar before confirming availability.</p>
+      <p class="request-copy">Day-rate pricing is quoted individually based on the date, guest count, and gathering needs. Submitting this form is a request only and does not create a reservation or hold a date.</p>
+      <p class="request-copy">Standalone day-use gatherings are governed by a <strong>Day Use Agreement</strong>. If an approved gathering is connected to an overnight stay, the stay uses the <strong>Rental Agreement</strong> together with the <strong>Vineyard Vista Properties Gathering Addendum to Rental Agreement</strong>.</p>
     </div>
     <form class="request-form" id="event-request-form" novalidate>
 <fieldset class="form-section">
@@ -284,7 +285,7 @@
       <fieldset class="form-section">
         <legend>Gathering details</legend>
         <div class="form-grid">
-          <label>Preferred event date *<input id="event-date" type="date" name="event_date" min="2026-10-01" max="2027-05-31" required></label>
+          <label>Preferred gathering date *<input id="event-date" type="date" name="event_date" min="2026-10-01" max="2027-05-31" required></label>
           <label>Occasion *
             <select name="occasion" required>
               <option value="">Select one</option>
@@ -319,8 +320,8 @@
           <label class="full">Tell us about the gathering<textarea name="event_notes" rows="6" placeholder="Share the occasion, timing, catering or vendor plans, and anything else that would help us understand the day."></textarea></label>
         </div>
       </fieldset>
-      <label class="checkbox-row"><input type="checkbox" name="acknowledgement" required><span>I understand that this is an inquiry only and that the date, rate, guest count, and event terms are subject to review and written approval.</span></label>
-      <button class="event-button" type="submit">Submit Event Request</button>
+      <label class="checkbox-row"><input type="checkbox" name="acknowledgement" required><span>I understand that this is an inquiry only and that the date, rate, guest count, and gathering terms are subject to review and written approval.</span></label>
+      <button class="event-button" type="submit">Submit Gathering Request</button>
       <p class="form-status" id="event-form-status" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -378,11 +379,11 @@
         });
         let result = {};
         try { result = await response.json(); } catch (_) {}
-        if (!response.ok) throw new Error(result.error || result.message || 'Unable to submit your event request.');
-        status.textContent = result.message || 'Thank you. Your event request has been received.';
+        if (!response.ok) throw new Error(result.error || result.message || 'Unable to submit your gathering request.');
+        status.textContent = result.message || 'Thank you. Your gathering request has been received.';
         form.reset();
       } catch (error) {
-        status.textContent = error.message || 'Unable to submit your event request. Please try again.';
+        status.textContent = error.message || 'Unable to submit your gathering request. Please try again.';
       } finally {
         if (submitButton) submitButton.disabled = false;
       }
